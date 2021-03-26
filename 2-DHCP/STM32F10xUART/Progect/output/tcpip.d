@@ -1,0 +1,9 @@
+.\output\tcpip.o: ..\LWIP\lwip-1.4.1\src\api\tcpip.c
+.\output\tcpip.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
+.\output\tcpip.o: ..\LWIP\lwip_app\lwip_comm\lwipopts.h
+.\output\tcpip.o: ..\LWIP\lwip-1.4.1\src\include\lwip/debug.h
+.\output\tcpip.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
+.\output\tcpip.o: ..\LWIP\arch/cc.h
+.\output\tcpip.o: ..\LWIP\arch/cpu.h
+.\output\tcpip.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\tcpip.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h

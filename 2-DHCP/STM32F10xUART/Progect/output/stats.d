@@ -1,0 +1,9 @@
+.\output\stats.o: ..\LWIP\lwip-1.4.1\src\core\stats.c
+.\output\stats.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
+.\output\stats.o: ..\LWIP\lwip_app\lwip_comm\lwipopts.h
+.\output\stats.o: ..\LWIP\lwip-1.4.1\src\include\lwip/debug.h
+.\output\stats.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
+.\output\stats.o: ..\LWIP\arch/cc.h
+.\output\stats.o: ..\LWIP\arch/cpu.h
+.\output\stats.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\stats.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
