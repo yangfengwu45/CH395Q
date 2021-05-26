@@ -1,0 +1,7 @@
+Dependencies for Project 'CH395', Target 'Demo': (DO NOT MODIFY !)
+F (.\CH395.C)(0x5F36BB19)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM0\RTE-I E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\MDK5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD-o .\ch395.o --omf_browse .\ch395.crf --depend .\ch395.d)
+F (..\SYSTEM\stm32f10x_it.c)(0x52CB504E)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM0\RTE-I E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\MDK5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD-o .\stm32f10x_it.o --omf_browse .\stm32f10x_it.crf --depend .\stm32f10x_it.d)
+I (..\SYSTEM\stm32f10x_it.h)(0x472FFAFA)
+F (..\SYSTEM\System_Init.c)(0x52CB504E)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM0\RTE-I E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\MDK5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD-o .\system_init.o --omf_browse .\system_init.crf --depend .\system_init.d)
+F (..\SYSTEM\STM32F10x.s)(0x48D843B0)(--cpu Cortex-M3 -g --apcs=interwork -I F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM0\RTE-I E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\MDK5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 514" --pd "STM32F10X_HD SETA 1"--list .\stm32f10x.lst --xref -o .\stm32f10x.o --depend .\stm32f10x.d)
+F (..\SYSTEM\STM32F10xR.LIB)(0x4CCA4934)()

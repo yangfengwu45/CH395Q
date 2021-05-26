@@ -1,0 +1,1690 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/15/2020  00:24:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\MDK5\KEIL_V5\C51\BIN\BL51.EXE CH395.obj TO CH395EVT RAMSIZE (256)
+
+
+MEMORY MODEL: LARGE
+
+
+INPUT MODULES INCLUDED:
+  CH395.obj (CH395)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C_STARTUP)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?COPY)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?CLDPTR)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?CSTPTR)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?ILDIX)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?SLCMP)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?ULSHR)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?LSHL)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?LSTXDATA)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?LSTKXDATA)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C?MEMSET)
+  E:\MDK5\KEIL_V5\C51\LIB\C51L.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  CH395EVT (CH395)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     000AH     UNIT         _IDATA_GROUP_
+            IDATA   0012H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     024AH     UNIT         ?XD?CH395
+            XDATA   024AH     0018H     UNIT         _XDATA_GROUP_
+            XDATA   0262H     0014H     UNIT         ?XD?_CH395CRCRET6BIT?CH395
+            XDATA   0276H     000DH     UNIT         ?XD?_CH395UDPSENDTO?CH395
+            XDATA   0283H     0009H     UNIT         ?XD?_CH395CMDSETMACFILT?CH395
+            XDATA   028CH     0006H     UNIT         ?XD?_CH395EEPROMWRITE?CH395
+            XDATA   0292H     0006H     UNIT         ?XD?_CH395EEPROMREAD?CH395
+            XDATA   0298H     0004H     UNIT         ?XD?_CH395CMDSETUARTBAUDRATE?CH395
+            XDATA   029CH     0004H     UNIT         ?XD?_CH395SETSTARTPARA?CH395
+            XDATA   02A0H     0003H     UNIT         ?XD?_CH395CMDSETMACADDR?CH395
+            XDATA   02A3H     0003H     UNIT         ?XD?_CH395CMDGETMACADDR?CH395
+            XDATA   02A6H     0003H     UNIT         ?XD?_CH395CMDGETSOCKETSTATUS?CH395
+            XDATA   02A9H     0003H     UNIT         ?XD?_CH395GETIPINF?CH395
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     01DCH     UNIT         ?C?LIB_CODE
+            CODE    01DFH     0175H     UNIT         ?PR?_CH395CRCRET6BIT?CH395
+            CODE    0354H     0163H     UNIT         ?PR?_CH395SOCKETINTERRUPT?CH395
+            CODE    04B7H     00E0H     UNIT         ?PR?INITSOCKETPARAM?CH395
+            CODE    0597H     00AEH     UNIT         ?PR?CH395SOCKETINITOPEN?CH395
+            CODE    0645H     0093H     UNIT         ?PR?_CH395CMDSETMACFILT?CH395
+            CODE    06D8H     008CH     UNIT         ?C_C51STARTUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 2
+
+
+            CODE    0764H     0078H     UNIT         ?PR?CH395GLOBALINTERRUPT?CH395
+            CODE    07DCH     0057H     UNIT         ?PR?_CH395GETRECVDATA?CH395
+            CODE    0833H     0054H     UNIT         ?PR?_CH395UDPSENDTO?CH395
+            CODE    0887H     0053H     UNIT         ?PR?_CH395EEPROMWRITE?CH395
+            CODE    08DAH     004FH     UNIT         ?C_INITSEG
+            CODE    0929H     004EH     UNIT         ?PR?_CH395SETSTARTPARA?CH395
+            CODE    0977H     004DH     UNIT         ?PR?_CH395EEPROMREAD?CH395
+            CODE    09C4H     0048H     UNIT         ?PR?INITCH395INFPARAM?CH395
+            CODE    0A0CH     0046H     UNIT         ?PR?_CH395SENDDATA?CH395
+            CODE    0A52H     0040H     UNIT         ?PR?_CH395CMDGETSOCKETSTATUS?CH395
+            CODE    0A92H     003BH     UNIT         ?PR?_CH395CMDSETUARTBAUDRATE?CH395
+            CODE    0ACDH     0038H     UNIT         ?PR?_CH395CMDGETREMOTEIPP?CH395
+            CODE    0B05H     0031H     UNIT         ?PR?_CH395CMDGETMACADDR?CH395
+            CODE    0B36H     0031H     UNIT         ?PR?_CH395CMDGETUNREACHIPPT?CH395
+            CODE    0B67H     0031H     UNIT         ?PR?_CH395GETIPINF?CH395
+            CODE    0B98H     002FH     UNIT         ?PR?MAIN?CH395
+            CODE    0BC7H     002EH     UNIT         ?PR?_XWRITECH395DATA?CH395
+            CODE    0BF5H     002EH     UNIT         ?PR?CH395CMDINITCH395?CH395
+            CODE    0C23H     002CH     UNIT         ?PR?CH395INIT?CH395
+            CODE    0C4FH     0029H     UNIT         ?PR?_CH395TCPCONNECT?CH395
+            CODE    0C78H     0029H     UNIT         ?PR?_CH395TCPLISTEN?CH395
+            CODE    0CA1H     0029H     UNIT         ?PR?_CH395TCPDISCONNECT?CH395
+            CODE    0CCAH     0029H     UNIT         ?PR?_CH395DHCPENABLE?CH395
+            CODE    0CF3H     0026H     UNIT         ?PR?_CH395OPENSOCKET?CH395
+            CODE    0D19H     0026H     UNIT         ?PR?_CH395CLOSESOCKET?CH395
+            CODE    0D3FH     0024H     UNIT         ?PR?_CH395CMDSETMACADDR?CH395
+            CODE    0D63H     0021H     UNIT         ?PR?CH395CMDGETGLOBINTSTATUS_ALL?CH395
+            CODE    0D84H     0020H     UNIT         ?PR?_CH395CMDSETIPADDR?CH395
+            CODE    0DA4H     0020H     UNIT         ?PR?_CH395CMDSETGWIPADDR?CH395
+            CODE    0DC4H     0020H     UNIT         ?PR?_CH395CMDSETMASKADDR?CH395
+            CODE    0DE4H     0020H     UNIT         ?PR?_CH395SETSOCKETDESIP?CH395
+            CODE    0E04H     001BH     UNIT         ?PR?_CH395GETRECVLENGTH?CH395
+            CODE    0E1FH     0019H     UNIT         ?PR?_CH395SETSOCKETDESPORT?CH395
+            CODE    0E38H     0019H     UNIT         ?PR?_CH395SETSOCKETSOURPORT?CH395
+            CODE    0E51H     0017H     UNIT         ?PR?_CH395GETSOCKETINT?CH395
+            CODE    0E68H     0016H     UNIT         ?PR?_CH395CMDSETRETRYPERIOD?CH395
+            CODE    0E7EH     0016H     UNIT         ?PR?_CH395SETSOCKETRECVBUF?CH395
+            CODE    0E94H     0016H     UNIT         ?PR?_CH395SETSOCKETSENDBUF?CH395
+            CODE    0EAAH     0015H     UNIT         ?PR?_CH395READGPIOADDR?CH395
+            CODE    0EBFH     0014H     UNIT         ?PR?_CH395SETSOCKETPROTTYPE?CH395
+            CODE    0ED3H     0014H     UNIT         ?PR?_CH395SETSOCKETIPRAWPROTO?CH395
+            CODE    0EE7H     0013H     UNIT         ?PR?CH395EEPROMERASE?CH395
+            CODE    0EFAH     0013H     UNIT         ?PR?_CH395SETTCPMSS?CH395
+            CODE    0F0DH     0013H     UNIT         ?PR?_MSTOPIFERROR?CH395
+            CODE    0F20H     0011H     UNIT         ?PR?_MDELAYMS?CH395
+            CODE    0F31H     0011H     UNIT         ?PR?_CH395WRITEGPIOADDR?CH395
+            CODE    0F42H     0011H     UNIT         ?PR?MINITSTDIO?CH395
+            CODE    0F53H     0010H     UNIT         ?PR?CH395GETCMDSTATUS?CH395
+            CODE    0F63H     000FH     UNIT         ?PR?_XWRITECH395CMD?CH395
+            CODE    0F72H     000FH     UNIT         ?PR?_CH395CMDSETPHY?CH395
+            CODE    0F81H     000FH     UNIT         ?PR?_CH395ENABLEPING?CH395
+            CODE    0F90H     000FH     UNIT         ?PR?_CH395CLEARRECVBUF?CH395
+            CODE    0F9FH     000FH     UNIT         ?PR?_CH395CMDSETRETRYCOUNT?CH395
+            CODE    0FAEH     000EH     UNIT         ?PR?_MDELAYUS?CH395
+            CODE    0FBCH     000EH     UNIT         ?PR?XREADCH395DATA?CH395
+            CODE    0FCAH     000DH     UNIT         ?PR?_SPI395EXCHANGE?CH395
+            CODE    0FD7H     000BH     UNIT         ?PR?CH395CMDGETVER?CH395
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 3
+
+
+            CODE    0FE2H     000BH     UNIT         ?PR?CH395CMDGETPHYSTATUS?CH395
+            CODE    0FEDH     000BH     UNIT         ?PR?CH395CMDGETGLOBINTSTATUS?CH395
+            CODE    0FF8H     000BH     UNIT         ?PR?CH395GETDHCPSTATUS?CH395
+            CODE    1003H     000AH     UNIT         ?PR?_CH395CMDCHECKEXIST?CH395
+            CODE    100DH     0009H     UNIT         ?PR?CH395_PORT_INIT?CH395
+            CODE    1016H     0008H     UNIT         ?PR?CH395CMDRESET?CH395
+            CODE    101EH     0008H     UNIT         ?PR?CH395CMDSLEEP?CH395
+
+
+
+OVERLAY MAP OF MODULE:   CH395EVT (CH395)
+
+
+SEGMENT                                          IDATA_GROUP         XDATA_GROUP
+  +--> CALLED SEGMENT                          START    LENGTH     START    LENGTH
+----------------------------------------------------------------------------------
+?C_C51STARTUP                                  -----    -----      -----    -----
+  +--> ?PR?MAIN?CH395
+  +--> ?C_INITSEG
+
+?PR?MAIN?CH395                                 -----    -----      -----    -----
+  +--> ?PR?_MDELAYMS?CH395
+  +--> ?PR?MINITSTDIO?CH395
+  +--> ?PR?CH395_PORT_INIT?CH395
+  +--> ?PR?INITCH395INFPARAM?CH395
+  +--> ?PR?CH395INIT?CH395
+  +--> ?PR?_MSTOPIFERROR?CH395
+  +--> ?PR?CH395CMDGETPHYSTATUS?CH395
+  +--> ?PR?INITSOCKETPARAM?CH395
+  +--> ?PR?CH395SOCKETINITOPEN?CH395
+  +--> ?PR?CH395GLOBALINTERRUPT?CH395
+
+?PR?_MDELAYMS?CH395                            -----    -----      -----    -----
+  +--> ?PR?_MDELAYUS?CH395
+
+?PR?CH395INIT?CH395                            -----    -----      -----    -----
+  +--> ?PR?_CH395CMDCHECKEXIST?CH395
+  +--> ?PR?_CH395CMDSETIPADDR?CH395
+  +--> ?PR?_CH395CMDSETGWIPADDR?CH395
+  +--> ?PR?_CH395CMDSETMASKADDR?CH395
+  +--> ?PR?CH395CMDINITCH395?CH395
+
+?PR?_CH395CMDCHECKEXIST?CH395                  -----    -----      -----    -----
+  +--> ?PR?XREADCH395DATA?CH395
+
+?PR?XREADCH395DATA?CH395                       -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+  +--> ?PR?_SPI395EXCHANGE?CH395
+
+?PR?_XWRITECH395CMD?CH395                      -----    -----      -----    -----
+  +--> ?PR?_SPI395EXCHANGE?CH395
+  +--> ?PR?_MDELAYUS?CH395
+
+?PR?_XWRITECH395DATA?CH395                     -----    -----      -----    -----
+  +--> ?PR?_SPI395EXCHANGE?CH395
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 4
+
+
+?PR?_CH395CMDSETIPADDR?CH395                   -----    -----      024AH    0003H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+
+?PR?_CH395CMDSETGWIPADDR?CH395                 -----    -----      024AH    0003H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+
+?PR?_CH395CMDSETMASKADDR?CH395                 -----    -----      024AH    0003H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+
+?PR?CH395CMDINITCH395?CH395                    -----    -----      024AH    0001H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_MDELAYMS?CH395
+  +--> ?PR?CH395GETCMDSTATUS?CH395
+
+?PR?CH395GETCMDSTATUS?CH395                    -----    -----      -----    -----
+  +--> ?PR?_MDELAYMS?CH395
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?XREADCH395DATA?CH395
+
+?PR?_MSTOPIFERROR?CH395                        -----    -----      -----    -----
+  +--> ?PR?_CH395OPENSOCKET?CH395
+  +--> ?PR?_MDELAYMS?CH395
+
+?PR?_CH395OPENSOCKET?CH395                     -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+  +--> ?PR?CH395GETCMDSTATUS?CH395
+
+?PR?CH395CMDGETPHYSTATUS?CH395                 -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?XREADCH395DATA?CH395
+
+?PR?CH395SOCKETINITOPEN?CH395                  -----    -----      -----    -----
+  +--> ?PR?_CH395SETSOCKETDESIP?CH395
+  +--> ?PR?_CH395SETSOCKETPROTTYPE?CH395
+  +--> ?PR?_CH395SETSOCKETDESPORT?CH395
+  +--> ?PR?_CH395SETSOCKETSOURPORT?CH395
+  +--> ?PR?_MSTOPIFERROR?CH395
+  +--> ?PR?_CH395TCPLISTEN?CH395
+  +--> ?PR?_CH395OPENSOCKET?CH395
+  +--> ?PR?_CH395TCPCONNECT?CH395
+  +--> ?PR?_CH395SETSOCKETIPRAWPROTO?CH395
+
+?PR?_CH395SETSOCKETDESIP?CH395                 -----    -----      024AH    0003H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+
+?PR?_CH395SETSOCKETPROTTYPE?CH395              -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+
+?PR?_CH395SETSOCKETDESPORT?CH395               -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 5
+
+
+
+?PR?_CH395SETSOCKETSOURPORT?CH395              -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+
+?PR?_CH395TCPLISTEN?CH395                      -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+  +--> ?PR?CH395GETCMDSTATUS?CH395
+
+?PR?_CH395TCPCONNECT?CH395                     -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+  +--> ?PR?CH395GETCMDSTATUS?CH395
+
+?PR?_CH395SETSOCKETIPRAWPROTO?CH395            -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+
+?PR?CH395GLOBALINTERRUPT?CH395                 -----    -----      024AH    000CH
+  +--> ?PR?CH395CMDGETGLOBINTSTATUS_ALL?CH395
+  +--> ?PR?_CH395CMDGETUNREACHIPPT?CH395
+  +--> ?PR?_CH395SOCKETINTERRUPT?CH395
+
+?PR?CH395CMDGETGLOBINTSTATUS_ALL?CH395         -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_MDELAYUS?CH395
+  +--> ?PR?XREADCH395DATA?CH395
+
+?PR?_CH395CMDGETUNREACHIPPT?CH395              -----    -----      0256H    0003H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?XREADCH395DATA?CH395
+
+?PR?_CH395SOCKETINTERRUPT?CH395                0008H    000AH      0256H    0006H
+  +--> ?PR?_CH395GETSOCKETINT?CH395
+  +--> ?PR?_CH395GETRECVLENGTH?CH395
+  +--> ?PR?_CH395GETRECVDATA?CH395
+  +--> ?PR?_CH395SENDDATA?CH395
+  +--> ?PR?_CH395CMDGETREMOTEIPP?CH395
+  +--> ?PR?_MDELAYMS?CH395
+  +--> ?PR?_CH395OPENSOCKET?CH395
+  +--> ?PR?_MSTOPIFERROR?CH395
+  +--> ?PR?_CH395TCPCONNECT?CH395
+
+?PR?_CH395GETSOCKETINT?CH395                   -----    -----      -----    -----
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+  +--> ?PR?_MDELAYUS?CH395
+  +--> ?PR?XREADCH395DATA?CH395
+
+?PR?_CH395GETRECVLENGTH?CH395                  -----    -----      -----    -----
+  +--> ?PR?XREADCH395DATA?CH395
+
+?PR?_CH395GETRECVDATA?CH395                    -----    -----      025CH    0003H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+  +--> ?PR?_MDELAYUS?CH395
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 6
+
+
+  +--> ?PR?XREADCH395DATA?CH395
+
+?PR?_CH395SENDDATA?CH395                       -----    -----      025CH    0006H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+
+?PR?_CH395CMDGETREMOTEIPP?CH395                -----    -----      025CH    0003H
+  +--> ?PR?_XWRITECH395CMD?CH395
+  +--> ?PR?_XWRITECH395DATA?CH395
+  +--> ?PR?XREADCH395DATA?CH395
+
+
+
+SYMBOL TABLE OF MODULE:  CH395EVT (CH395)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CH395
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:101EH         PUBLIC        CH395CMDSleep
+  C:0ACDH         PUBLIC        _CH395CMDGetRemoteIPP
+  D:0090H         PUBLIC        P1
+  C:0DE4H         PUBLIC        _CH395SetSocketDesIP
+  C:0D3FH         PUBLIC        _CH395CMDSetMACAddr
+  D:00B0H         PUBLIC        P3
+  C:0887H         PUBLIC        _CH395EEPROMWrite
+  C:0B67H         PUBLIC        _CH395GetIPInf
+  C:0F42H         PUBLIC        mInitSTDIO
+  C:0F81H         PUBLIC        _CH395EnablePing
+  C:0C78H         PUBLIC        _CH395TCPListen
+  C:1016H         PUBLIC        CH395CMDReset
+  C:01DFH         PUBLIC        _CH395CRCRet6Bit
+  D:00A8H         PUBLIC        IE
+  C:0E1FH         PUBLIC        _CH395SetSocketDesPort
+  C:0D19H         PUBLIC        _CH395CloseSocket
+  C:0645H         PUBLIC        _CH395CMDSetMACFilt
+  C:0EBFH         PUBLIC        _CH395SetSocketProtType
+  D:00B8H         PUBLIC        IP
+  C:0CCAH         PUBLIC        _CH395DHCPEnable
+  C:0A52H         PUBLIC        _CH395CMDGetSocketStatus
+  C:0D63H         PUBLIC        CH395CMDGetGlobIntStatus_ALL
+  B:0098H.1       PUBLIC        TI
+  B:00B0H.3       PUBLIC        INT1
+  C:0E38H         PUBLIC        _CH395SetSocketSourPort
+  C:0FE2H         PUBLIC        CH395CMDGetPHYStatus
+  C:0F20H         PUBLIC        _mDelaymS
+  C:0FC4H         PUBLIC        xReadCH395Data
+  C:0F72H         PUBLIC        _CH395CMDSetPHY
+  X:0000H         PUBLIC        MyBuffer
+  C:0B98H         PUBLIC        main
+  C:0CA1H         PUBLIC        _CH395TCPDisconnect
+  C:0FB5H         PUBLIC        _mDelayuS
+  C:0CF3H         PUBLIC        _CH395OpenSocket
+  C:0B36H         PUBLIC        _CH395CMDGetUnreachIPPT
+  X:0190H         PUBLIC        SockInf
+  D:0087H         PUBLIC        PCON
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 7
+
+
+  C:0BF2H         PUBLIC        _xWriteCH395Data
+  C:0E68H         PUBLIC        _CH395CMDSetRetryPeriod
+  D:0098H         PUBLIC        SCON
+  B:0090H.4       PUBLIC        P14
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0A0CH         PUBLIC        _CH395SendData
+  D:00D5H         PUBLIC        SPCR
+  D:0086H         PUBLIC        SPDR
+  C:0C23H         PUBLIC        CH395Init
+  X:0200H         PUBLIC        CH395IPAddr
+  C:0597H         PUBLIC        CH395SocketInitOpen
+  C:0BF5H         PUBLIC        CH395CMDInitCH395
+  C:0E04H         PUBLIC        _CH395GetRecvLength
+  C:0D84H         PUBLIC        _CH395CMDSetIPAddr
+  D:00AAH         PUBLIC        SPSR
+  C:0F90H         PUBLIC        _CH395ClearRecvBuf
+  C:0F66H         PUBLIC        _xWriteCH395Cmd
+  X:0204H         PUBLIC        CH395Inf
+  D:008DH         PUBLIC        TH1
+  C:0F10H         PUBLIC        _mStopIfError
+  C:0FD7H         PUBLIC        CH395CMDGetVer
+  X:0227H         PUBLIC        Socket0DesIP
+  X:022BH         PUBLIC        Socket1DesIP
+  X:022FH         PUBLIC        CH395IPMask
+  C:0764H         PUBLIC        CH395GlobalInterrupt
+  X:0233H         PUBLIC        Socket2DesIP
+  B:0088H.6       PUBLIC        TR1
+  C:09C4H         PUBLIC        InitCH395InfParam
+  X:0237H         PUBLIC        Socket3DesIP
+  C:0F9FH         PUBLIC        _CH395CMDSetRetryCount
+  C:0EAAH         PUBLIC        _CH395ReadGPIOAddr
+  X:023BH         PUBLIC        IPRawProto
+  C:0DC4H         PUBLIC        _CH395CMDSetMASKAddr
+  C:0A92H         PUBLIC        _CH395CMDSetUartBaudRate
+  C:07DCH         PUBLIC        _CH395GetRecvData
+  C:0FEDH         PUBLIC        CH395CMDGetGlobIntStatus
+  X:023CH         PUBLIC        Socket0DesPort
+  X:023EH         PUBLIC        CH395GWIPAddr
+  X:0242H         PUBLIC        Socket2DesPort
+  C:0C4FH         PUBLIC        _CH395TCPConnect
+  C:0ED3H         PUBLIC        _CH395SetSocketIPRAWProto
+  D:00C8H         PUBLIC        T2CON
+  C:0DA4H         PUBLIC        _CH395CMDSetGWIPAddr
+  C:0833H         PUBLIC        _CH395UDPSendTo
+  C:0E51H         PUBLIC        _CH395GetSocketInt
+  C:100DH         PUBLIC        CH395_PORT_INIT
+  C:0F31H         PUBLIC        _CH395WriteGPIOAddr
+  C:0EE7H         PUBLIC        CH395EEPROMErase
+  C:0F58H         PUBLIC        CH395GetCmdStatus
+  C:0354H         PUBLIC        _CH395SocketInterrupt
+  X:0244H         PUBLIC        Socket0SourPort
+  X:0246H         PUBLIC        Socket1SourPort
+  X:0248H         PUBLIC        Socket2SourPort
+  C:0929H         PUBLIC        _CH395SetStartPara
+  C:0E94H         PUBLIC        _CH395SetSocketSendBuf
+  C:0B05H         PUBLIC        _CH395CMDGetMACAddr
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 8
+
+
+  C:1003H         PUBLIC        _CH395CMDCheckExist
+  C:0977H         PUBLIC        _CH395EEPROMRead
+  C:04B7H         PUBLIC        InitSocketParam
+  C:0FCAH         PUBLIC        _Spi395Exchange
+  C:0FF8H         PUBLIC        CH395GetDHCPStatus
+  C:0EFAH         PUBLIC        _CH395SetTCPMss
+  D:00D0H         PUBLIC        PSW
+  C:0E7EH         PUBLIC        _CH395SetSocketRecvBuf
+  -------         PROC          L?0198
+  -------         ENDPROC       L?0198
+  -------         PROC          _MDELAYUS
+  D:0007H         SYMBOL        us
+  C:0FB5H         LINE#         39
+  C:0FB5H         LINE#         40
+  C:0FB5H         LINE#         41
+  C:0FBBH         LINE#         42
+  -------         ENDPROC       _MDELAYUS
+  -------         PROC          _MDELAYMS
+  D:0005H         SYMBOL        ms
+  C:0F20H         LINE#         51
+  C:0F22H         LINE#         52
+  C:0F22H         LINE#         53
+  C:0F28H         LINE#         54
+  C:0F28H         LINE#         55
+  C:0F28H         LINE#         56
+  C:0F2BH         LINE#         57
+  C:0F2BH         LINE#         58
+  C:0F2EH         LINE#         59
+  C:0F30H         LINE#         60
+  -------         ENDPROC       _MDELAYMS
+  -------         PROC          CH395_PORT_INIT
+  C:100DH         LINE#         69
+  C:100DH         LINE#         70
+  C:100DH         LINE#         71
+  C:100FH         LINE#         74
+  C:1012H         LINE#         78
+  C:1015H         LINE#         80
+  -------         ENDPROC       CH395_PORT_INIT
+  -------         PROC          _SPI395EXCHANGE
+  D:0007H         SYMBOL        d
+  C:0FCAH         LINE#         89
+  C:0FCAH         LINE#         90
+  C:0FCAH         LINE#         92
+  C:0FCCH         LINE#         93
+  C:0FD1H         LINE#         94
+  C:0FD4H         LINE#         95
+  C:0FD6H         LINE#         96
+  -------         ENDPROC       _SPI395EXCHANGE
+  -------         PROC          L?0197
+  -------         ENDPROC       L?0197
+  -------         PROC          _XWRITECH395CMD
+  D:0007H         SYMBOL        cmd
+  C:0F66H         LINE#         105
+  C:0F66H         LINE#         106
+  C:0F66H         LINE#         107
+  C:0F68H         LINE#         108
+  C:0F6AH         LINE#         109
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 9
+
+
+  C:0F6DH         LINE#         110
+  -------         ENDPROC       _XWRITECH395CMD
+  C:0BE1H         SYMBOL        L?0192
+  -------         PROC          L?0191
+  -------         ENDPROC       L?0191
+  C:0BE1H         SYMBOL        L?0192
+  -------         PROC          _XWRITECH395DATA
+  D:0007H         SYMBOL        mdata
+  C:0BF2H         LINE#         120
+  C:0BF2H         LINE#         121
+  C:0BF2H         LINE#         122
+  -------         ENDPROC       _XWRITECH395DATA
+  C:0FBCH         SYMBOL        L?0196
+  -------         PROC          L?0195
+  -------         ENDPROC       L?0195
+  C:0FBCH         SYMBOL        L?0196
+  -------         PROC          XREADCH395DATA
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0FC4H         LINE#         132
+  C:0FC4H         LINE#         133
+  C:0FC4H         LINE#         135
+  C:0FC9H         LINE#         136
+  C:0FC9H         LINE#         137
+  -------         ENDPROC       XREADCH395DATA
+  -------         PROC          CH395CMDRESET
+  C:1016H         LINE#         21
+  C:1016H         LINE#         22
+  C:1016H         LINE#         23
+  C:101BH         LINE#         24
+  C:101DH         LINE#         25
+  -------         ENDPROC       CH395CMDRESET
+  -------         PROC          CH395CMDSLEEP
+  C:101EH         LINE#         34
+  C:101EH         LINE#         35
+  C:101EH         LINE#         36
+  C:1023H         LINE#         37
+  C:1025H         LINE#         38
+  -------         ENDPROC       CH395CMDSLEEP
+  -------         PROC          CH395CMDGETVER
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0FD7H         LINE#         48
+  C:0FD7H         LINE#         49
+  C:0FD7H         LINE#         51
+  C:0FDCH         LINE#         52
+  C:0FDFH         LINE#         53
+  C:0FE1H         LINE#         54
+  C:0FE1H         LINE#         55
+  -------         ENDPROC       CH395CMDGETVER
+  -------         PROC          _CH395CMDCHECKEXIST
+  D:0005H         SYMBOL        testdata
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 10
+
+
+  C:1003H         LINE#         64
+  C:1005H         LINE#         65
+  C:1005H         LINE#         68
+  C:1007H         LINE#         69
+  C:1007H         LINE#         70
+  C:100AH         LINE#         71
+  C:100CH         LINE#         72
+  C:100CH         LINE#         73
+  -------         ENDPROC       _CH395CMDCHECKEXIST
+  -------         PROC          _CH395CMDSETPHY
+  D:0005H         SYMBOL        phystat
+  C:0F72H         LINE#         83
+  C:0F74H         LINE#         84
+  C:0F74H         LINE#         85
+  C:0F79H         LINE#         86
+  C:0F7EH         LINE#         87
+  C:0F80H         LINE#         88
+  -------         ENDPROC       _CH395CMDSETPHY
+  -------         PROC          CH395CMDGETPHYSTATUS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0FE2H         LINE#         97
+  C:0FE2H         LINE#         98
+  C:0FE2H         LINE#         101
+  C:0FE7H         LINE#         102
+  C:0FEAH         LINE#         103
+  C:0FECH         LINE#         104
+  C:0FECH         LINE#         105
+  -------         ENDPROC       CH395CMDGETPHYSTATUS
+  -------         PROC          CH395CMDGETGLOBINTSTATUS
+  -------         DO            
+  D:0007H         SYMBOL        init_status
+  -------         ENDDO         
+  C:0FEDH         LINE#         114
+  C:0FEDH         LINE#         115
+  C:0FEDH         LINE#         118
+  C:0FF2H         LINE#         119
+  C:0FF5H         LINE#         120
+  C:0FF7H         LINE#         121
+  C:0FF7H         LINE#         122
+  -------         ENDPROC       CH395CMDGETGLOBINTSTATUS
+  -------         PROC          CH395CMDINITCH395
+  -------         DO            
+  X:024AH         SYMBOL        i
+  D:0005H         SYMBOL        s
+  -------         ENDDO         
+  C:0BF5H         LINE#         131
+  C:0BF5H         LINE#         132
+  C:0BF5H         LINE#         133
+  C:0BFAH         LINE#         134
+  C:0BFBH         LINE#         136
+  C:0C00H         LINE#         137
+  C:0C02H         LINE#         138
+  C:0C02H         LINE#         139
+  C:0C02H         LINE#         140
+  C:0C07H         LINE#         141
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 11
+
+
+  C:0C0CH         LINE#         142
+  C:0C10H         LINE#         143
+  C:0C20H         LINE#         144
+  C:0C20H         LINE#         145
+  C:0C22H         LINE#         146
+  -------         ENDPROC       CH395CMDINITCH395
+  -------         PROC          _CH395CMDSETUARTBAUDRATE
+  X:0298H         SYMBOL        baudrate
+  C:0A92H         LINE#         155
+  C:0A98H         LINE#         156
+  C:0A98H         LINE#         157
+  C:0A9DH         LINE#         158
+  C:0AA8H         LINE#         159
+  C:0AB4H         LINE#         160
+  C:0ACAH         LINE#         161
+  C:0ACCH         LINE#         162
+  -------         ENDPROC       _CH395CMDSETUARTBAUDRATE
+  C:0F53H         SYMBOL        L?0194
+  -------         PROC          L?0193
+  -------         ENDPROC       L?0193
+  C:0F53H         SYMBOL        L?0194
+  -------         PROC          CH395GETCMDSTATUS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0F58H         LINE#         171
+  C:0F58H         LINE#         172
+  C:0F58H         LINE#         175
+  C:0F5DH         LINE#         176
+  C:0F60H         LINE#         177
+  C:0F62H         LINE#         178
+  C:0F62H         LINE#         179
+  -------         ENDPROC       CH395GETCMDSTATUS
+  -------         PROC          _CH395CMDSETIPADDR
+  X:024AH         SYMBOL        ipaddr
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0D84H         LINE#         188
+  C:0D8FH         LINE#         189
+  C:0D8FH         LINE#         192
+  C:0D94H         LINE#         193
+  C:0DA1H         LINE#         194
+  C:0DA3H         LINE#         195
+  -------         ENDPROC       _CH395CMDSETIPADDR
+  -------         PROC          _CH395CMDSETGWIPADDR
+  X:024AH         SYMBOL        gwipaddr
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0DA4H         LINE#         204
+  C:0DAFH         LINE#         205
+  C:0DAFH         LINE#         208
+  C:0DB4H         LINE#         209
+  C:0DC1H         LINE#         210
+  C:0DC3H         LINE#         211
+  -------         ENDPROC       _CH395CMDSETGWIPADDR
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 12
+
+
+  -------         PROC          _CH395CMDSETMASKADDR
+  X:024AH         SYMBOL        maskaddr
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0DC4H         LINE#         220
+  C:0DCFH         LINE#         221
+  C:0DCFH         LINE#         224
+  C:0DD4H         LINE#         225
+  C:0DE1H         LINE#         226
+  C:0DE3H         LINE#         227
+  -------         ENDPROC       _CH395CMDSETMASKADDR
+  -------         PROC          _CH395CMDSETMACADDR
+  X:02A0H         SYMBOL        amcaddr
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0D3FH         LINE#         236
+  C:0D4AH         LINE#         237
+  C:0D4AH         LINE#         240
+  C:0D4FH         LINE#         241
+  C:0D5CH         LINE#         242
+  C:0D5EH         LINE#         243
+  -------         ENDPROC       _CH395CMDSETMACADDR
+  -------         PROC          _CH395CMDGETMACADDR
+  X:02A3H         SYMBOL        amcaddr
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0B05H         LINE#         253
+  C:0B10H         LINE#         254
+  C:0B10H         LINE#         257
+  C:0B15H         LINE#         258
+  C:0B33H         LINE#         259
+  C:0B35H         LINE#         260
+  -------         ENDPROC       _CH395CMDGETMACADDR
+  -------         PROC          _CH395CMDSETMACFILT
+  D:0005H         SYMBOL        filtype
+  X:0284H         SYMBOL        table0
+  X:0288H         SYMBOL        table1
+  C:0645H         LINE#         271
+  C:0647H         LINE#         272
+  C:0647H         LINE#         273
+  C:064CH         LINE#         274
+  C:0651H         LINE#         275
+  C:065CH         LINE#         276
+  C:0668H         LINE#         277
+  C:067EH         LINE#         278
+  C:0694H         LINE#         280
+  C:069DH         LINE#         281
+  C:06A9H         LINE#         282
+  C:06BFH         LINE#         283
+  C:06D5H         LINE#         284
+  C:06D7H         LINE#         285
+  -------         ENDPROC       _CH395CMDSETMACFILT
+  -------         PROC          _CH395CMDGETUNREACHIPPT
+  X:0256H         SYMBOL        list
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 13
+
+
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0B36H         LINE#         298
+  C:0B41H         LINE#         299
+  C:0B41H         LINE#         302
+  C:0B46H         LINE#         303
+  C:0B48H         LINE#         304
+  C:0B48H         LINE#         305
+  C:0B5FH         LINE#         306
+  C:0B64H         LINE#         307
+  C:0B66H         LINE#         308
+  -------         ENDPROC       _CH395CMDGETUNREACHIPPT
+  -------         PROC          _CH395CMDGETREMOTEIPP
+  D:0005H         SYMBOL        sockindex
+  X:025CH         SYMBOL        list
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0ACDH         LINE#         318
+  C:0ADAH         LINE#         319
+  C:0ADAH         LINE#         322
+  C:0ADFH         LINE#         323
+  C:0AE4H         LINE#         324
+  C:0AE6H         LINE#         325
+  C:0AE6H         LINE#         326
+  C:0AFDH         LINE#         327
+  C:0B02H         LINE#         328
+  C:0B04H         LINE#         329
+  -------         ENDPROC       _CH395CMDGETREMOTEIPP
+  -------         PROC          _CH395SETSOCKETDESIP
+  D:0005H         SYMBOL        sockindex
+  X:024AH         SYMBOL        ipaddr
+  C:0DE4H         LINE#         339
+  C:0DF1H         LINE#         340
+  C:0DF1H         LINE#         341
+  C:0DF6H         LINE#         342
+  C:0DFBH         LINE#         343
+  C:0DFBH         LINE#         344
+  C:0DFEH         LINE#         345
+  C:0DFEH         LINE#         346
+  C:0E01H         LINE#         347
+  C:0E03H         LINE#         348
+  -------         ENDPROC       _CH395SETSOCKETDESIP
+  -------         PROC          _CH395SETSOCKETPROTTYPE
+  D:0004H         SYMBOL        sockindex
+  D:0005H         SYMBOL        prottype
+  C:0EBFH         LINE#         358
+  C:0EC1H         LINE#         359
+  C:0EC1H         LINE#         360
+  C:0EC6H         LINE#         361
+  C:0ECBH         LINE#         362
+  C:0ED0H         LINE#         363
+  C:0ED2H         LINE#         364
+  -------         ENDPROC       _CH395SETSOCKETPROTTYPE
+  -------         PROC          _CH395SETSOCKETDESPORT
+  D:0003H         SYMBOL        sockindex
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 14
+
+
+  D:0004H         SYMBOL        desprot
+  C:0E1FH         LINE#         375
+  C:0E21H         LINE#         376
+  C:0E21H         LINE#         377
+  C:0E26H         LINE#         378
+  C:0E2BH         LINE#         379
+  C:0E30H         LINE#         380
+  C:0E35H         LINE#         381
+  C:0E37H         LINE#         382
+  -------         ENDPROC       _CH395SETSOCKETDESPORT
+  -------         PROC          _CH395SETSOCKETSOURPORT
+  D:0003H         SYMBOL        sockindex
+  D:0004H         SYMBOL        surprot
+  C:0E38H         LINE#         392
+  C:0E3AH         LINE#         393
+  C:0E3AH         LINE#         394
+  C:0E3FH         LINE#         395
+  C:0E44H         LINE#         396
+  C:0E49H         LINE#         397
+  C:0E4EH         LINE#         398
+  C:0E50H         LINE#         399
+  -------         ENDPROC       _CH395SETSOCKETSOURPORT
+  -------         PROC          _CH395SETSOCKETIPRAWPROTO
+  D:0004H         SYMBOL        sockindex
+  D:0005H         SYMBOL        prototype
+  C:0ED3H         LINE#         409
+  C:0ED5H         LINE#         410
+  C:0ED5H         LINE#         411
+  C:0EDAH         LINE#         412
+  C:0EDFH         LINE#         413
+  C:0EE4H         LINE#         414
+  C:0EE6H         LINE#         415
+  -------         ENDPROC       _CH395SETSOCKETIPRAWPROTO
+  -------         PROC          _CH395ENABLEPING
+  D:0005H         SYMBOL        enable
+  C:0F81H         LINE#         425
+  C:0F83H         LINE#         426
+  C:0F83H         LINE#         427
+  C:0F88H         LINE#         428
+  C:0F8DH         LINE#         429
+  C:0F8FH         LINE#         430
+  -------         ENDPROC       _CH395ENABLEPING
+  -------         PROC          _CH395SENDDATA
+  D:0005H         SYMBOL        sockindex
+  X:025DH         SYMBOL        databuf
+  X:0260H         SYMBOL        len
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0A0CH         LINE#         442
+  C:0A19H         LINE#         443
+  C:0A19H         LINE#         446
+  C:0A1EH         LINE#         447
+  C:0A23H         LINE#         448
+  C:0A2AH         LINE#         449
+  C:0A32H         LINE#         451
+  C:0A42H         LINE#         452
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 15
+
+
+  C:0A42H         LINE#         453
+  C:0A48H         LINE#         454
+  C:0A4FH         LINE#         455
+  C:0A51H         LINE#         456
+  -------         ENDPROC       _CH395SENDDATA
+  -------         PROC          _CH395GETRECVLENGTH
+  D:0005H         SYMBOL        sockindex
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0E04H         LINE#         465
+  C:0E06H         LINE#         466
+  C:0E06H         LINE#         469
+  C:0E08H         LINE#         470
+  C:0E08H         LINE#         471
+  C:0E0FH         LINE#         472
+  C:0E19H         LINE#         473
+  C:0E1BH         LINE#         474
+  C:0E1EH         LINE#         475
+  -------         ENDPROC       _CH395GETRECVLENGTH
+  -------         PROC          _CH395CLEARRECVBUF
+  D:0005H         SYMBOL        sockindex
+  C:0F90H         LINE#         484
+  C:0F92H         LINE#         485
+  C:0F92H         LINE#         486
+  C:0F97H         LINE#         487
+  C:0F9CH         LINE#         488
+  C:0F9EH         LINE#         489
+  -------         ENDPROC       _CH395CLEARRECVBUF
+  -------         PROC          _CH395GETRECVDATA
+  X:025CH         SYMBOL        sockindex
+  X:025DH         SYMBOL        len
+  D:0001H         SYMBOL        pbuf
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:07DCH         LINE#         500
+  C:07E7H         LINE#         501
+  C:07E7H         LINE#         503
+  C:07EAH         LINE#         504
+  C:07EFH         LINE#         505
+  C:07F7H         LINE#         506
+  C:07FEH         LINE#         507
+  C:0806H         LINE#         508
+  C:080BH         LINE#         509
+  C:081BH         LINE#         510
+  C:081BH         LINE#         511
+  C:0822H         LINE#         512
+  C:0829H         LINE#         513
+  C:0830H         LINE#         514
+  C:0832H         LINE#         515
+  -------         ENDPROC       _CH395GETRECVDATA
+  -------         PROC          _CH395CMDSETRETRYCOUNT
+  D:0005H         SYMBOL        count
+  C:0F9FH         LINE#         524
+  C:0FA1H         LINE#         525
+  C:0FA1H         LINE#         526
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 16
+
+
+  C:0FA6H         LINE#         527
+  C:0FABH         LINE#         528
+  C:0FADH         LINE#         529
+  -------         ENDPROC       _CH395CMDSETRETRYCOUNT
+  -------         PROC          _CH395CMDSETRETRYPERIOD
+  D:0004H         SYMBOL        period
+  C:0E68H         LINE#         538
+  C:0E6CH         LINE#         539
+  C:0E6CH         LINE#         540
+  C:0E71H         LINE#         541
+  C:0E76H         LINE#         542
+  C:0E7BH         LINE#         543
+  C:0E7DH         LINE#         544
+  -------         ENDPROC       _CH395CMDSETRETRYPERIOD
+  -------         PROC          _CH395CMDGETSOCKETSTATUS
+  D:0005H         SYMBOL        sockindex
+  X:02A6H         SYMBOL        status
+  C:0A52H         LINE#         554
+  C:0A5FH         LINE#         555
+  C:0A5FH         LINE#         556
+  C:0A61H         LINE#         557
+  C:0A61H         LINE#         558
+  C:0A78H         LINE#         559
+  C:0A8FH         LINE#         560
+  C:0A91H         LINE#         561
+  -------         ENDPROC       _CH395CMDGETSOCKETSTATUS
+  -------         PROC          _CH395OPENSOCKET
+  D:0005H         SYMBOL        sockindex
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0003H         SYMBOL        s
+  -------         ENDDO         
+  C:0CF3H         LINE#         570
+  C:0CF5H         LINE#         571
+  C:0CF5H         LINE#         572
+  C:0CF5H         LINE#         573
+  C:0CF5H         LINE#         574
+  C:0CFAH         LINE#         575
+  C:0CFFH         LINE#         576
+  C:0D01H         LINE#         577
+  C:0D01H         LINE#         578
+  C:0D01H         LINE#         579
+  C:0D01H         LINE#         580
+  C:0D06H         LINE#         581
+  C:0D0AH         LINE#         582
+  C:0D16H         LINE#         583
+  C:0D16H         LINE#         584
+  C:0D18H         LINE#         585
+  -------         ENDPROC       _CH395OPENSOCKET
+  -------         PROC          _CH395CLOSESOCKET
+  D:0005H         SYMBOL        sockindex
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0003H         SYMBOL        s
+  -------         ENDDO         
+  C:0D19H         LINE#         594
+  C:0D1BH         LINE#         595
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 17
+
+
+  C:0D1BH         LINE#         596
+  C:0D1BH         LINE#         597
+  C:0D1BH         LINE#         598
+  C:0D20H         LINE#         599
+  C:0D25H         LINE#         600
+  C:0D27H         LINE#         601
+  C:0D27H         LINE#         602
+  C:0D27H         LINE#         603
+  C:0D27H         LINE#         604
+  C:0D2CH         LINE#         605
+  C:0D30H         LINE#         606
+  C:0D3CH         LINE#         607
+  C:0D3CH         LINE#         608
+  C:0D3EH         LINE#         609
+  -------         ENDPROC       _CH395CLOSESOCKET
+  -------         PROC          _CH395TCPCONNECT
+  D:0005H         SYMBOL        sockindex
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0003H         SYMBOL        s
+  -------         ENDDO         
+  C:0C4FH         LINE#         618
+  C:0C51H         LINE#         619
+  C:0C51H         LINE#         620
+  C:0C53H         LINE#         621
+  C:0C54H         LINE#         622
+  C:0C59H         LINE#         623
+  C:0C5EH         LINE#         624
+  C:0C60H         LINE#         625
+  C:0C60H         LINE#         626
+  C:0C60H         LINE#         627
+  C:0C60H         LINE#         628
+  C:0C65H         LINE#         629
+  C:0C69H         LINE#         630
+  C:0C75H         LINE#         631
+  C:0C75H         LINE#         632
+  C:0C77H         LINE#         633
+  -------         ENDPROC       _CH395TCPCONNECT
+  -------         PROC          _CH395TCPLISTEN
+  D:0005H         SYMBOL        sockindex
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0003H         SYMBOL        s
+  -------         ENDDO         
+  C:0C78H         LINE#         642
+  C:0C7AH         LINE#         643
+  C:0C7AH         LINE#         644
+  C:0C7CH         LINE#         645
+  C:0C7DH         LINE#         646
+  C:0C82H         LINE#         647
+  C:0C87H         LINE#         648
+  C:0C89H         LINE#         649
+  C:0C89H         LINE#         650
+  C:0C89H         LINE#         651
+  C:0C89H         LINE#         652
+  C:0C8EH         LINE#         653
+  C:0C92H         LINE#         654
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 18
+
+
+  C:0C9EH         LINE#         655
+  C:0C9EH         LINE#         656
+  C:0CA0H         LINE#         657
+  -------         ENDPROC       _CH395TCPLISTEN
+  -------         PROC          _CH395TCPDISCONNECT
+  D:0005H         SYMBOL        sockindex
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0003H         SYMBOL        s
+  -------         ENDDO         
+  C:0CA1H         LINE#         666
+  C:0CA3H         LINE#         667
+  C:0CA3H         LINE#         668
+  C:0CA5H         LINE#         669
+  C:0CA6H         LINE#         670
+  C:0CABH         LINE#         671
+  C:0CB0H         LINE#         672
+  C:0CB2H         LINE#         673
+  C:0CB2H         LINE#         674
+  C:0CB2H         LINE#         675
+  C:0CB2H         LINE#         676
+  C:0CB7H         LINE#         677
+  C:0CBBH         LINE#         678
+  C:0CC7H         LINE#         679
+  C:0CC7H         LINE#         680
+  C:0CC9H         LINE#         681
+  -------         ENDPROC       _CH395TCPDISCONNECT
+  -------         PROC          _CH395GETSOCKETINT
+  D:0005H         SYMBOL        sockindex
+  -------         DO            
+  D:0007H         SYMBOL        intstatus
+  -------         ENDDO         
+  C:0E51H         LINE#         690
+  C:0E53H         LINE#         691
+  C:0E53H         LINE#         693
+  C:0E58H         LINE#         694
+  C:0E5DH         LINE#         695
+  C:0E62H         LINE#         696
+  C:0E65H         LINE#         697
+  C:0E67H         LINE#         698
+  C:0E67H         LINE#         699
+  -------         ENDPROC       _CH395GETSOCKETINT
+  -------         PROC          _CH395CRCRET6BIT
+  X:0262H         SYMBOL        mac_addr
+  -------         DO            
+  X:0265H         SYMBOL        perByte
+  X:0269H         SYMBOL        perBit
+  X:026DH         SYMBOL        poly
+  X:0271H         SYMBOL        crc_value
+  X:0275H         SYMBOL        c
+  -------         ENDDO         
+  C:01DFH         LINE#         708
+  C:01EAH         LINE#         709
+  C:01EAH         LINE#         712
+  C:01F4H         LINE#         713
+  C:01FEH         LINE#         715
+  C:0225H         LINE#         716
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 19
+
+
+  C:0225H         LINE#         717
+  C:023CH         LINE#         718
+  C:0263H         LINE#         719
+  C:0263H         LINE#         720
+  C:02DBH         LINE#         721
+  C:02E2H         LINE#         722
+  C:030AH         LINE#         723
+  C:0332H         LINE#         724
+  C:034BH         LINE#         725
+  C:0353H         LINE#         726
+  -------         ENDPROC       _CH395CRCRET6BIT
+  -------         PROC          _CH395DHCPENABLE
+  D:0005H         SYMBOL        flag
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0007H         SYMBOL        s
+  -------         ENDDO         
+  C:0CCAH         LINE#         735
+  C:0CCCH         LINE#         736
+  C:0CCCH         LINE#         737
+  C:0CCEH         LINE#         739
+  C:0CD3H         LINE#         740
+  C:0CD8H         LINE#         741
+  C:0CDAH         LINE#         742
+  C:0CDAH         LINE#         743
+  C:0CDAH         LINE#         744
+  C:0CDFH         LINE#         745
+  C:0CE2H         LINE#         746
+  C:0CE6H         LINE#         747
+  C:0CF2H         LINE#         748
+  C:0CF2H         LINE#         749
+  C:0CF2H         LINE#         750
+  -------         ENDPROC       _CH395DHCPENABLE
+  -------         PROC          CH395GETDHCPSTATUS
+  -------         DO            
+  D:0007H         SYMBOL        status
+  -------         ENDDO         
+  C:0FF8H         LINE#         759
+  C:0FF8H         LINE#         760
+  C:0FF8H         LINE#         762
+  C:0FFDH         LINE#         763
+  C:1000H         LINE#         764
+  C:1002H         LINE#         765
+  C:1002H         LINE#         766
+  -------         ENDPROC       CH395GETDHCPSTATUS
+  -------         PROC          _CH395GETIPINF
+  X:02A9H         SYMBOL        addr
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0B67H         LINE#         775
+  C:0B72H         LINE#         776
+  C:0B72H         LINE#         778
+  C:0B77H         LINE#         779
+  C:0B79H         LINE#         780
+  C:0B79H         LINE#         781
+  C:0B90H         LINE#         782
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 20
+
+
+  C:0B95H         LINE#         783
+  C:0B97H         LINE#         784
+  -------         ENDPROC       _CH395GETIPINF
+  -------         PROC          _CH395WRITEGPIOADDR
+  D:0004H         SYMBOL        regadd
+  D:0005H         SYMBOL        regval
+  C:0F31H         LINE#         794
+  C:0F33H         LINE#         795
+  C:0F33H         LINE#         796
+  C:0F38H         LINE#         797
+  C:0F3DH         LINE#         798
+  -------         ENDPROC       _CH395WRITEGPIOADDR
+  -------         PROC          _CH395READGPIOADDR
+  D:0005H         SYMBOL        regadd
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0EAAH         LINE#         808
+  C:0EACH         LINE#         809
+  C:0EACH         LINE#         811
+  C:0EB1H         LINE#         812
+  C:0EB6H         LINE#         813
+  C:0EBBH         LINE#         814
+  C:0EBEH         LINE#         815
+  C:0EBEH         LINE#         816
+  -------         ENDPROC       _CH395READGPIOADDR
+  -------         PROC          CH395EEPROMERASE
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0EE7H         LINE#         825
+  C:0EE7H         LINE#         826
+  C:0EE7H         LINE#         828
+  C:0EECH         LINE#         829
+  C:0EECH         LINE#         830
+  C:0EECH         LINE#         831
+  C:0EF1H         LINE#         832
+  C:0EF4H         LINE#         833
+  C:0EF9H         LINE#         834
+  C:0EF9H         LINE#         835
+  C:0EF9H         LINE#         836
+  C:0EF9H         LINE#         837
+  -------         ENDPROC       CH395EEPROMERASE
+  -------         PROC          _CH395EEPROMWRITE
+  D:0004H         SYMBOL        eepaddr
+  X:028EH         SYMBOL        buf
+  X:0291H         SYMBOL        len
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0887H         LINE#         848
+  C:0896H         LINE#         849
+  C:0896H         LINE#         851
+  C:089BH         LINE#         852
+  C:08A0H         LINE#         853
+  C:08A5H         LINE#         854
+  C:08A9H         LINE#         855
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 21
+
+
+  C:08CCH         LINE#         856
+  C:08CCH         LINE#         857
+  C:08CCH         LINE#         858
+  C:08D1H         LINE#         859
+  C:08D4H         LINE#         860
+  C:08D9H         LINE#         861
+  C:08D9H         LINE#         862
+  C:08D9H         LINE#         863
+  C:08D9H         LINE#         864
+  -------         ENDPROC       _CH395EEPROMWRITE
+  -------         PROC          _CH395EEPROMREAD
+  D:0004H         SYMBOL        eepaddr
+  X:0294H         SYMBOL        buf
+  X:0297H         SYMBOL        len
+  C:0977H         LINE#         875
+  C:0986H         LINE#         876
+  C:0986H         LINE#         877
+  C:098BH         LINE#         878
+  C:0990H         LINE#         879
+  C:0995H         LINE#         880
+  C:099BH         LINE#         881
+  C:09A0H         LINE#         882
+  C:09C3H         LINE#         883
+  -------         ENDPROC       _CH395EEPROMREAD
+  -------         PROC          _CH395SETTCPMSS
+  D:0004H         SYMBOL        tcpmss
+  C:0EFAH         LINE#         892
+  C:0EFEH         LINE#         893
+  C:0EFEH         LINE#         894
+  C:0F03H         LINE#         895
+  C:0F08H         LINE#         896
+  -------         ENDPROC       _CH395SETTCPMSS
+  -------         PROC          _CH395SETSOCKETRECVBUF
+  D:0004H         SYMBOL        sockindex
+  D:0005H         SYMBOL        startblk
+  D:0003H         SYMBOL        blknum
+  C:0E7EH         LINE#         908
+  C:0E80H         LINE#         909
+  C:0E80H         LINE#         910
+  C:0E85H         LINE#         911
+  C:0E8AH         LINE#         912
+  C:0E8FH         LINE#         913
+  -------         ENDPROC       _CH395SETSOCKETRECVBUF
+  -------         PROC          _CH395SETSOCKETSENDBUF
+  D:0004H         SYMBOL        sockindex
+  D:0005H         SYMBOL        startblk
+  D:0003H         SYMBOL        blknum
+  C:0E94H         LINE#         925
+  C:0E96H         LINE#         926
+  C:0E96H         LINE#         927
+  C:0E9BH         LINE#         928
+  C:0EA0H         LINE#         929
+  C:0EA5H         LINE#         930
+  -------         ENDPROC       _CH395SETSOCKETSENDBUF
+  -------         PROC          _CH395UDPSENDTO
+  X:0276H         SYMBOL        buf
+  X:0279H         SYMBOL        len
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 22
+
+
+  X:027DH         SYMBOL        ip
+  X:0280H         SYMBOL        port
+  X:0282H         SYMBOL        sockindex
+  C:0833H         LINE#         944
+  C:0842H         LINE#         945
+  C:0842H         LINE#         946
+  C:0855H         LINE#         947
+  C:0865H         LINE#         948
+  -------         ENDPROC       _CH395UDPSENDTO
+  -------         PROC          _CH395SETSTARTPARA
+  X:029CH         SYMBOL        mdata
+  C:0929H         LINE#         958
+  C:092FH         LINE#         959
+  C:092FH         LINE#         960
+  C:0934H         LINE#         961
+  C:093FH         LINE#         962
+  C:094BH         LINE#         963
+  C:0961H         LINE#         964
+  -------         ENDPROC       _CH395SETSTARTPARA
+  -------         PROC          CH395CMDGETGLOBINTSTATUS_ALL
+  -------         DO            
+  D:0004H         SYMBOL        init_status
+  -------         ENDDO         
+  C:0D63H         LINE#         974
+  C:0D63H         LINE#         975
+  C:0D63H         LINE#         977
+  C:0D68H         LINE#         978
+  C:0D6DH         LINE#         979
+  C:0D74H         LINE#         980
+  C:0D7EH         LINE#         981
+  C:0D80H         LINE#         982
+  C:0D83H         LINE#         983
+  -------         ENDPROC       CH395CMDGETGLOBINTSTATUS_ALL
+  -------         PROC          L?0199
+  -------         ENDPROC       L?0199
+  -------         PROC          _MSTOPIFERROR
+  D:0007H         SYMBOL        iError
+  C:0F10H         LINE#         84
+  C:0F10H         LINE#         85
+  C:0F10H         LINE#         86
+  C:0F13H         LINE#         90
+  C:0F13H         LINE#         91
+  C:0F13H         LINE#         92
+  C:0F18H         LINE#         93
+  C:0F1DH         LINE#         94
+  C:0F1FH         LINE#         95
+  -------         ENDPROC       _MSTOPIFERROR
+  -------         PROC          INITCH395INFPARAM
+  C:09C4H         LINE#         104
+  C:09C4H         LINE#         105
+  C:09C4H         LINE#         106
+  C:09D3H         LINE#         107
+  C:09E6H         LINE#         108
+  C:09F9H         LINE#         109
+  -------         ENDPROC       INITCH395INFPARAM
+  -------         PROC          INITSOCKETPARAM
+  C:04B7H         LINE#         119
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 23
+
+
+  C:04B7H         LINE#         120
+  C:04B7H         LINE#         121
+  C:04C6H         LINE#         122
+  C:04D9H         LINE#         123
+  C:04E8H         LINE#         124
+  C:04F7H         LINE#         125
+  C:04FDH         LINE#         127
+  C:050CH         LINE#         128
+  C:051BH         LINE#         129
+  C:0521H         LINE#         130
+  C:0527H         LINE#         132
+  C:0535H         LINE#         133
+  C:0548H         LINE#         134
+  C:0557H         LINE#         135
+  C:0566H         LINE#         136
+  C:056CH         LINE#         137
+  C:0571H         LINE#         139
+  C:057EH         LINE#         140
+  C:0591H         LINE#         141
+  C:0596H         LINE#         142
+  -------         ENDPROC       INITSOCKETPARAM
+  -------         PROC          CH395SOCKETINITOPEN
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0597H         LINE#         151
+  C:0597H         LINE#         152
+  C:0597H         LINE#         156
+  C:05A2H         LINE#         157
+  C:05A9H         LINE#         158
+  C:05B6H         LINE#         159
+  C:05C1H         LINE#         160
+  C:05C3H         LINE#         161
+  C:05C6H         LINE#         164
+  C:05CDH         LINE#         165
+  C:05DAH         LINE#         166
+  C:05DCH         LINE#         167
+  C:05DFH         LINE#         168
+  C:05E4H         LINE#         169
+  C:05E7H         LINE#         172
+  C:05F2H         LINE#         173
+  C:05F9H         LINE#         174
+  C:0606H         LINE#         175
+  C:0611H         LINE#         176
+  C:0616H         LINE#         177
+  C:0619H         LINE#         178
+  C:061EH         LINE#         179
+  C:0621H         LINE#         182
+  C:062CH         LINE#         183
+  C:0633H         LINE#         184
+  C:063DH         LINE#         185
+  C:0642H         LINE#         186
+  -------         ENDPROC       CH395SOCKETINITOPEN
+  -------         PROC          _CH395SOCKETINTERRUPT
+  X:0256H         SYMBOL        sockindex
+  -------         DO            
+  X:0257H         SYMBOL        sock_int_socket
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 24
+
+
+  D:0002H         SYMBOL        i
+  X:0258H         SYMBOL        len
+  X:025AH         SYMBOL        tmp
+  I:0008H         SYMBOL        buf
+  -------         ENDDO         
+  C:0354H         LINE#         196
+  C:0359H         LINE#         197
+  C:0359H         LINE#         204
+  C:035FH         LINE#         205
+  C:035FH         LINE#         206
+  C:035FH         LINE#         208
+  C:035FH         LINE#         209
+  C:035FH         LINE#         210
+  C:035FH         LINE#         211
+  C:035FH         LINE#         212
+  C:0369H         LINE#         213
+  C:0369H         LINE#         214
+  C:0379H         LINE#         218
+  C:037FH         LINE#         219
+  C:0394H         LINE#         220
+  C:03B3H         LINE#         221
+  C:03CFH         LINE#         222
+  C:03CFH         LINE#         223
+  C:040FH         LINE#         224
+  C:041FH         LINE#         225
+  C:0445H         LINE#         227
+  C:0445H         LINE#         228
+  C:044CH         LINE#         229
+  C:044CH         LINE#         233
+  C:0462H         LINE#         234
+  C:0462H         LINE#         235
+  C:046BH         LINE#         236
+  C:047FH         LINE#         242
+  C:047FH         LINE#         243
+  C:047FH         LINE#         244
+  C:047FH         LINE#         245
+  C:047FH         LINE#         246
+  C:047FH         LINE#         247
+  C:0486H         LINE#         248
+  C:0486H         LINE#         254
+  C:049AH         LINE#         255
+  C:049AH         LINE#         256
+  C:049FH         LINE#         257
+  C:04A9H         LINE#         258
+  C:04ACH         LINE#         259
+  C:04B1H         LINE#         260
+  C:04B6H         LINE#         261
+  C:04B6H         LINE#         262
+  C:04B6H         LINE#         263
+  -------         ENDPROC       _CH395SOCKETINTERRUPT
+  -------         PROC          CH395GLOBALINTERRUPT
+  -------         DO            
+  X:024AH         SYMBOL        init_status
+  X:024CH         SYMBOL        buf
+  -------         ENDDO         
+  C:0764H         LINE#         272
+  C:0764H         LINE#         273
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 25
+
+
+  C:0764H         LINE#         277
+  C:076FH         LINE#         278
+  C:0772H         LINE#         279
+  C:0772H         LINE#         280
+  C:077BH         LINE#         281
+  C:077BH         LINE#         282
+  C:077BH         LINE#         283
+  C:077BH         LINE#         284
+  C:077BH         LINE#         285
+  C:077BH         LINE#         286
+  C:077BH         LINE#         290
+  C:077BH         LINE#         291
+  C:0782H         LINE#         292
+  C:0782H         LINE#         293
+  C:0787H         LINE#         294
+  C:0787H         LINE#         295
+  C:078EH         LINE#         296
+  C:078EH         LINE#         297
+  C:0793H         LINE#         298
+  C:0793H         LINE#         299
+  C:079AH         LINE#         300
+  C:079AH         LINE#         301
+  C:079FH         LINE#         302
+  C:079FH         LINE#         303
+  C:07A6H         LINE#         304
+  C:07A6H         LINE#         305
+  C:07ABH         LINE#         306
+  C:07ABH         LINE#         307
+  C:07B2H         LINE#         308
+  C:07B2H         LINE#         309
+  C:07B7H         LINE#         310
+  C:07B7H         LINE#         311
+  C:07BEH         LINE#         312
+  C:07BEH         LINE#         313
+  C:07C3H         LINE#         314
+  C:07C3H         LINE#         315
+  C:07CAH         LINE#         316
+  C:07CAH         LINE#         317
+  C:07CFH         LINE#         318
+  C:07CFH         LINE#         319
+  C:07D6H         LINE#         320
+  C:07D6H         LINE#         321
+  C:07DBH         LINE#         322
+  C:07DBH         LINE#         323
+  -------         ENDPROC       CH395GLOBALINTERRUPT
+  -------         PROC          CH395INIT
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0C23H         LINE#         332
+  C:0C23H         LINE#         333
+  C:0C23H         LINE#         336
+  C:0C28H         LINE#         337
+  C:0C30H         LINE#         346
+  C:0C39H         LINE#         347
+  C:0C42H         LINE#         348
+  C:0C4BH         LINE#         349
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 26
+
+
+  C:0C4EH         LINE#         350
+  C:0C4EH         LINE#         351
+  -------         ENDPROC       CH395INIT
+  -------         PROC          MINITSTDIO
+  C:0F42H         LINE#         360
+  C:0F42H         LINE#         361
+  C:0F42H         LINE#         362
+  C:0F45H         LINE#         363
+  C:0F48H         LINE#         364
+  C:0F4BH         LINE#         365
+  C:0F4EH         LINE#         366
+  C:0F50H         LINE#         367
+  C:0F52H         LINE#         368
+  -------         ENDPROC       MINITSTDIO
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0B98H         LINE#         377
+  C:0B98H         LINE#         378
+  C:0B98H         LINE#         380
+  C:0B9DH         LINE#         381
+  C:0BA0H         LINE#         385
+  C:0BA3H         LINE#         386
+  C:0BA6H         LINE#         387
+  C:0BA9H         LINE#         388
+  C:0BACH         LINE#         390
+  C:0BACH         LINE#         391
+  C:0BACH         LINE#         392
+  C:0BB2H         LINE#         393
+  C:0BB2H         LINE#         394
+  C:0BB7H         LINE#         395
+  C:0BB9H         LINE#         397
+  C:0BB9H         LINE#         401
+  C:0BB9H         LINE#         402
+  C:0BB9H         LINE#         403
+  C:0BB9H         LINE#         404
+  C:0BBCH         LINE#         405
+  C:0BBFH         LINE#         406
+  C:0BBFH         LINE#         407
+  C:0BBFH         LINE#         408
+  C:0BC5H         LINE#         409
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        CH395
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CLDPTR
+  C:00F9H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0112H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 27
+
+
+  -------         MODULE        ?C?ILDIX
+  C:0124H         PUBLIC        ?C?ILDIX
+  -------         ENDMOD        ?C?ILDIX
+
+  -------         MODULE        ?C?SLCMP
+  C:013AH         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+  -------         MODULE        ?C?ULSHR
+  C:0150H         PUBLIC        ?C?ULSHR
+  -------         ENDMOD        ?C?ULSHR
+
+  -------         MODULE        ?C?LSHL
+  C:0163H         PUBLIC        ?C?LSHL
+  -------         ENDMOD        ?C?LSHL
+
+  -------         MODULE        ?C?LSTXDATA
+  C:0176H         PUBLIC        ?C?LSTXDATA
+  -------         ENDMOD        ?C?LSTXDATA
+
+  -------         MODULE        ?C?LSTKXDATA
+  C:0182H         PUBLIC        ?C?LSTKXDATA
+  -------         ENDMOD        ?C?LSTKXDATA
+
+  -------         MODULE        ?C?MEMSET
+  C:01B3H         PUBLIC        ?C?MEMSET
+  -------         ENDMOD        ?C?MEMSET
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CH395CMDRESET?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CH395CMDSLEEP?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CH395CMDGETVER?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CMDSETPHY?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CH395CMDGETGLOBINTSTATUS?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CMDSETUARTBAUDRATE?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CMDSETMACADDR?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CMDGETMACADDR?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CMDSETMACFILT?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395ENABLEPING?CH395
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 28
+
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CLEARRECVBUF?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CMDSETRETRYCOUNT?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CMDSETRETRYPERIOD?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CMDGETSOCKETSTATUS?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CLOSESOCKET?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395TCPDISCONNECT?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395CRCRET6BIT?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395DHCPENABLE?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CH395GETDHCPSTATUS?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395GETIPINF?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395WRITEGPIOADDR?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395READGPIOADDR?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CH395EEPROMERASE?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395EEPROMWRITE?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395EEPROMREAD?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395SETTCPMSS?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395SETSOCKETRECVBUF?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395SETSOCKETSENDBUF?CH395
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395UDPSENDTO?CH395
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  00:24:48  PAGE 29
+
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CH395SETSTARTPARA?CH395
+
+Program Size: data=19.0 xdata=684 code=4134
+LINK/LOCATE RUN COMPLETE.  30 WARNING(S),  0 ERROR(S)

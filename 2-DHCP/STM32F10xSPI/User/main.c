@@ -43,7 +43,7 @@ unsigned char *MainString;    //全局通用变量
 int main(void)
 {
   NVIC_Configuration();
-	uart_init(9600,9600,9600);	 //串口初始化为115200
+	uart_init(115200,9600,9600);	 //串口初始化为115200
 	GpioInit();
 	CH395_PORT_INIT();
 	DelayInit();

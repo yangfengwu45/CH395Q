@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+
+</head>
+<table width="1200" border="0">
+<tr>
+<td colspan="2" style="background-color:#99bbbb;">
+<h1> <center>基于CH395WEB服务器演示页面  </h1>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" style="background-color:gray;height:50px;">
+<h1><left><small>说明:1、本页面用于演示基于CH395WEB服务器工作原理 <br>&nbsp; &nbsp; &nbsp;2、通过页面上的控制按钮，您可以实时远程LED控制 <br>&nbsp; &nbsp; &nbsp;3、通过观察窗口进行远程数据监测</small></h1>
+</td>
+</tr>
+<tr valign="top">
+<td style="background-color:#ffff99;width:600px;text-align:top;">
+
+<br><br><br>
+<strong><font  size = 13 >&nbsp; &nbsp; &nbsp  &nbsp; &nbsp;  控制窗口</font>	</strong>
+<br><br><br><br><br>
+<br><br>
+<form  action="LEDCONTROL.CGI">
+<strong><font  size = 5 >
+	&nbsp  &nbsp &nbsp
+	LED1 状态：灭 &nbsp  <input value="1" name="led1" type="checkbox">打开      &nbsp 	<input value="2" name="led1" type="checkbox">关闭 
+  <br><br>
+  &nbsp  &nbsp &nbsp LED2 状态：灭 &nbsp  <input value="3" name="led2" type="checkbox">打开      &nbsp 	<input value="4" name="led2" type="checkbox">关闭 
+
+</font>	</strong>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp; &nbsp;
+<input value="Send" type="submit"> </form>
+
+
+
+<h3><font size="-1"><span style="color: black;"></span>
+</font></h3><h3 style="font-weight: normal; font-family: Verdana;"><font size="-1"><br>
+</font></h3>
+<br><br>
+
+<strong>
+<form action="CH395SETING.CGI">
+ &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp;IP&nbsp&nbsp  :<input name=IP type=text value= 192.168.111.64 &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp style=" color:#black" ><br>
+ &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp;PORT :<input name=PORT type=text value= 80      &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp style=" color:#black" ><br><br>
+ &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp  &nbsp;&nbsp; &nbsp  &nbsp;&nbsp; &nbsp  <input type="submit" value="CHANGE"></form>
+</strong>
+
+</td>
+<td style="background-color:silver;height:600px;width:600px;text-align:top;">
+<center>
+<br><br><br>
+<strong><font  size = 13 >监测窗口</font>	</strong>
+<br><br><br><br><br><br><br><br><br>
+<strong><font  size = 6 >
+ <br>
+ <form action="monitor.CGI">
+ 温度：25  °
+ <br>
+ <br>
+ &nbsp;电流：50  MA
+ <br>
+ <br>
+ 电压：12  V
+ <br>
+ <br>
+ <input type="submit" value="watch">
+</font>	</strong>	
+</td>
+
+</tr>
+<tr>
+<td colspan="2" style="background-color:#99bbbb;text-align:center;">
+Copyright <A href = "www.wch.cn"> www.wch.cn</A></td>
+</tr>
+</table>
+
+</body>
+</html>

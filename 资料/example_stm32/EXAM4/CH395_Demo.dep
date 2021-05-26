@@ -1,0 +1,101 @@
+Dependencies for Project 'CH395', Target 'Demo': (DO NOT MODIFY !)
+F (.\CH395.C)(0x54531C14)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I D:\KEIL4\Keil\ARM\RV31\INC-I D:\KEIL4\Keil\ARM\CMSIS\Include-I D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x-o .\ch395.o --omf_browse .\ch395.crf --depend .\ch395.d)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_lib.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_map.h)(0x52CE4B92)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_conf.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_type.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\cortexm3_macro.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_adc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_bkp.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_can.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_crc.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dac.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dbgmcu.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dma.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_exti.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_flash.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_fsmc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_gpio.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_i2c.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_iwdg.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_nvic.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_pwr.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_rcc.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_rtc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_sdio.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_spi.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_systick.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_tim.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_usart.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_wwdg.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Documents and Settings\owner\桌面\395-C51\CH395DEMO_STM32_NEW\system\system.h)(0x52C60C6E)
+I (D:\KEIL4\Keil\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (C:\Documents and Settings\owner\桌面\395-C51\CH395DEMO_STM32_NEW\PUB\CH395inc.h)(0x53F6F224)
+I (C:\Documents and Settings\owner\桌面\395-C51\CH395DEMO_STM32_NEW\EXAM4\CH395.H)(0x52CB97C4)
+I (C:\Documents and Settings\owner\桌面\395-C51\CH395DEMO_STM32_NEW\PUB\CH395SPI_HW.C)(0x52CB582C)
+I (C:\Documents and Settings\owner\桌面\395-C51\CH395DEMO_STM32_NEW\PUB\CH395CMD.C)(0x53F6F724)
+I (C:\Documents and Settings\owner\桌面\395-C51\CH395DEMO_STM32_NEW\PUB\ch395cmd.h)(0x53F6F72E)
+F (..\SYSTEM\stm32f10x_it.c)(0x52CB504E)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I D:\KEIL4\Keil\ARM\RV31\INC-I D:\KEIL4\Keil\ARM\CMSIS\Include-I D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x-o .\stm32f10x_it.o --omf_browse .\stm32f10x_it.crf --depend .\stm32f10x_it.d)
+I (C:\Documents and Settings\owner\桌面\395-C51\CH395DEMO_STM32_NEW\SYSTEM\stm32f10x_it.h)(0x472FFAFA)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_lib.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_map.h)(0x52CE4B92)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_conf.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_type.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\cortexm3_macro.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_adc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_bkp.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_can.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_crc.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dac.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dbgmcu.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dma.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_exti.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_flash.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_fsmc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_gpio.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_i2c.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_iwdg.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_nvic.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_pwr.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_rcc.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_rtc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_sdio.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_spi.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_systick.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_tim.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_usart.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_wwdg.h)(0x48D84430)
+F (..\SYSTEM\System_Init.c)(0x52CB504E)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I D:\KEIL4\Keil\ARM\RV31\INC-I D:\KEIL4\Keil\ARM\CMSIS\Include-I D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x-o .\system_init.o --omf_browse .\system_init.crf --depend .\system_init.d)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_lib.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_map.h)(0x52CE4B92)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_conf.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_type.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\cortexm3_macro.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_adc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_bkp.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_can.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_crc.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dac.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dbgmcu.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_dma.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_exti.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_flash.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_fsmc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_gpio.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_i2c.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_iwdg.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_nvic.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_pwr.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_rcc.h)(0x48D84430)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_rtc.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_sdio.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_spi.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_systick.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_tim.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_usart.h)(0x48D84432)
+I (D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_wwdg.h)(0x48D84430)
+I (C:\Documents and Settings\owner\桌面\395-C51\CH395DEMO_STM32_NEW\SYSTEM\system.h)(0x52C60C6E)
+I (D:\KEIL4\Keil\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+F (..\SYSTEM\STM32F10x.s)(0x48D843B0)(--cpu Cortex-M3 -g --apcs=interwork -I D:\KEIL4\Keil\ARM\RV31\INC-I D:\KEIL4\Keil\ARM\CMSIS\Include-I D:\KEIL4\Keil\ARM\Inc\ST\STM32F10x--list .\stm32f10x.lst --xref -o .\stm32f10x.o --depend .\stm32f10x.d)
+F (..\SYSTEM\STM32F10xR.LIB)(0x4CCA4934)()

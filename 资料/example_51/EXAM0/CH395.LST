@@ -1,0 +1,460 @@
+C51 COMPILER V9.54   CH395                                                                 08/15/2020 00:24:47 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE CH395
+OBJECT MODULE PLACED IN CH395.OBJ
+COMPILER INVOKED BY: E:\MDK5\Keil_v5\C51\BIN\C51.EXE CH395.C LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(..\pubfile) DEBUG OBJ
+                    -ECTEXTEND TABS(2)
+
+line level    source
+
+   1          /********************************** (C) COPYRIGHT *********************************
+   2          * File Name          : CH395.C
+   3          * Author             : WCH
+   4          * Version            : V1.1
+   5          * Date               : 2014/8/1
+   6          * Description        : CH395¹¦ÄÜÑÝÊ¾³ÌÐò
+   7          **********************************************************************************/
+   8          
+   9          /**********************************************************************************
+  10          CH395 TCP/IP Ð­Òé×å½Ó¿Ú
+  11          MSC51 ÑÝÊ¾³ÌÐò£¬ÑÝÊ¾4¸ösocket ·Ö±ðÊ¹ÓÃUDP,TCP Client,TCP ServerÒÔ¼°IP RAW ,µ¥Æ¬»ú
+  12          ÊÕµ½Êý¾Ýºó£¬°´Î»È¡·´ºóÉÏ´«¡£MCS51@24MHZ,KEIL 4
+  13          **********************************************************************************/
+  14          /* Í·ÎÄ¼þ°üº¬*/
+  15          #include <reg52.h>
+  16          #include "stdio.h"
+  17          #include "string.h"
+  18          #include "../PUB/CH395INC.H"
+  19          #include "CH395.H"
+  20          
+  21          /**********************************************************************************/
+  22          /*
+  23          CH395_OP_INTERFACE_MODE¿ÉÒÔÎª1-5
+  24          1£ºÓ²¼þ×ÜÏß²¢¿ÚÁ¬½Ó·½Ê½
+  25          2£ºÈí¼þÄ£Äâ²¢¿ÚÁ¬½Ó·½Ê½
+  26          3: Ó²¼þSPIÁ¬½Ó·½Ê½
+  27          4: Èí¼þÄ£ÄâSPI·½Ê½
+  28          5: Ó²¼þÒì²½´®¿ÚÁ¬½Ó·½Ê½
+  29          */
+  30          #define   CH395_OP_INTERFACE_MODE             3                      
+  31          #if   (CH395_OP_INTERFACE_MODE == 1)                                 /* SEL = 0, TX = 1*/
+              #include "../PUB/CH395PARA_HW.C"                                           
+              #elif (CH395_OP_INTERFACE_MODE == 2)                                 /* SEL = 0, TX = 1*/
+              #include "../PUB/CH395PARA_SW.C"                                            
+              #elif (CH395_OP_INTERFACE_MODE == 3)                                 /* SEL = 1, TX = 0*/
+  36          #include "../PUB/CH395SPI_HW.C"
+  37          #elif (CH395_OP_INTERFACE_MODE == 4)                                 /* SEL = 1, TX = 0*/
+              #include "../PUB/CH395SPI_SW.C"
+              #elif (CH395_OP_INTERFACE_MODE == 5)                                 /* SEL = 1, TX = 1*/
+              #include "../PUB/CH395UART.C"
+              #else
+              #error "Please Select Correct Communication Interface "
+              #endif
+  44          
+  45          /**********************************************************************************/
+  46          /* °üº¬ÃüÁîÎÄ¼þ */
+  47          #include "../PUB/CH395CMD.C"
+  48          
+  49          #define     CH395_DEBUG                0
+  50          /* ³£ÓÃ±äÁ¿¶¨Òå */
+  51          UINT8 xdata MyBuffer[4][100];                                        /* Êý¾Ý»º³åÇø ,´ËÊý¾Ý»º³åÇø³¤¶È¿É¸ù¾Ý
+             -µ¥Æ¬»ú×ÊÔ´ÊÊµ±µ÷´ó,ÒÔÌá¸ßÍ¨Ñ¶ËÙ¶È*/
+  52          struct _SOCK_INF xdata SockInf[4];                                   /* ±£´æSocketÐÅÏ¢ */
+  53          struct _CH395_SYS xdata CH395Inf;                                    /* ±£´æCH395ÐÅÏ¢ */
+C51 COMPILER V9.54   CH395                                                                 08/15/2020 00:24:47 PAGE 2   
+
+  54          
+  55          /* CH395Ïà¹Ø¶¨Òå */
+  56          const UINT8 CH395IPAddr[4] = {192,168,1,10};                         /* CH395IPµØÖ· */
+  57          const UINT8 CH395GWIPAddr[4] = {192,168,1,1};                        /* CH395Íø¹Ø */
+  58          const UINT8 CH395IPMask[4] = {255,255,255,0};                        /* CH395×ÓÍøÑÚÂë */
+  59          
+  60          /* socket Ïà¹Ø¶¨Òå,Îª·½±ãÑÝÊ¾£¬socket0-2¶¨ÒåÁËÔ´¶Ë¿ÚºÍÄ¿µÄ¶Ë¿Ú,socket3 */
+  61          /* ÎªIP RAW£¬ÐèÒª¶¨ÒåIP Ð­Òé×Ö¶ÎµÄÐ­ÒéÀàÐÍ */
+  62          const UINT8  Socket0DesIP[4] = {192,168,1,100};                      /* Socket 0Ä¿µÄIPµØÖ· */
+  63          const UINT16 Socket0DesPort = 1000;                                  /* Socket 0Ä¿µÄ¶Ë¿Ú */
+  64          const UINT16 Socket0SourPort = 5000;                                 /* Socket 0Ô´¶Ë¿Ú */
+  65          
+  66          const UINT8  Socket1DesIP[4] = {192,168,1,100};                      /* Socket 1Ä¿µÄIPµØÖ· */
+  67          const UINT16 Socket1SourPort = 6000;                                 /* Socket 1Ô´¶Ë¿Ú */
+  68          
+  69          const UINT8  Socket2DesIP[4] = {192,168,1,100};                      /* Socket 2Ä¿µÄIPµØÖ· */
+  70          const UINT16 Socket2DesPort = 3000;                                  /* Socket 2Ä¿µÄ¶Ë¿Ú */
+  71          const UINT16 Socket2SourPort = 7000;                                 /* Socket 2Ô´¶Ë¿Ú */
+  72          
+  73          const UINT8  Socket3DesIP[4] = {192,168,1,100};                      /* Socket 3Ä¿µÄIPµØÖ· */
+  74          const UINT8  IPRawProto = 0xE2; 
+  75                                                                               /* IP°üÐ­ÒéÀàÐÍ */
+  76          
+  77          /**********************************************************************************
+  78          * Function Name  : mStopIfError
+  79          * Description    : µ÷ÊÔÊ¹ÓÃ£¬ÏÔÊ¾´íÎó´úÂë£¬²¢Í£»ú
+  80          * Input          : iError   ´íÎó´úÂë
+  81          * Output         : None
+  82          * Return         : None
+  83          **********************************************************************************/
+  84          void mStopIfError(UINT8 iError)
+  85          {
+  86   1          if (iError == CMD_ERR_SUCCESS) return;                           /* ²Ù×÷³É¹¦ */
+  87   1      #if CH395_DEBUG
+                  printf("Error: %02X\n", (UINT16)iError);                         /* ÏÔÊ¾´íÎó */
+              #endif
+  90   1          while ( 1 ) 
+  91   1          {
+  92   2              mDelaymS(200);
+  93   2              mDelaymS(200);
+  94   2          }
+  95   1      }
+  96          
+  97          /**********************************************************************************
+  98          * Function Name  : InitCH395InfParam
+  99          * Description    : ³õÊ¼»¯CH395Inf²ÎÊý
+ 100          * Input          : None
+ 101          * Output         : None
+ 102          * Return         : None
+ 103          **********************************************************************************/
+ 104          void InitCH395InfParam(void)
+ 105          {
+ 106   1          memset(&CH395Inf,0,sizeof(CH395Inf));                            /* ½«CH395InfÈ«²¿ÇåÁã*/
+ 107   1          memcpy(CH395Inf.IPAddr,CH395IPAddr,sizeof(CH395IPAddr));         /* ½«IPµØÖ·Ð´ÈëCH395InfÖÐ */
+ 108   1          memcpy(CH395Inf.GWIPAddr,CH395GWIPAddr,sizeof(CH395GWIPAddr));   /* ½«Íø¹ØIPµØÖ·Ð´ÈëCH395InfÖÐ */
+ 109   1          memcpy(CH395Inf.MASKAddr,CH395IPMask,sizeof(CH395IPMask));       /* ½«×ÓÍøÑÚÂëÐ´ÈëCH395InfÖÐ */
+ 110   1      }
+ 111          
+ 112          /**********************************************************************************
+ 113          * Function Name  : InitSocketParam
+ 114          * Description    : ³õÊ¼»¯socket
+ 115          * Input          : None
+C51 COMPILER V9.54   CH395                                                                 08/15/2020 00:24:47 PAGE 3   
+
+ 116          * Output         : None
+ 117          * Return         : None
+ 118          **********************************************************************************/
+ 119          void InitSocketParam(void)
+ 120          {
+ 121   1          memset(&SockInf[0],0,sizeof(SockInf[0]));                        /* ½«SockInf[0]È«²¿ÇåÁã*/
+ 122   1          memcpy(SockInf[0].IPAddr,Socket0DesIP,sizeof(Socket0DesIP));     /* ½«Ä¿µÄIPµØÖ·Ð´Èë */
+ 123   1          SockInf[0].DesPort = Socket0DesPort;                             /* Ä¿µÄ¶Ë¿Ú */
+ 124   1          SockInf[0].SourPort = Socket0SourPort;                           /* Ô´¶Ë¿Ú */
+ 125   1          SockInf[0].ProtoType = PROTO_TYPE_UDP;                           /* UDPÄ£Ê½ */
+ 126   1      
+ 127   1          memset(&SockInf[1],0,sizeof(SockInf[1]));                        /* ½«SockInf[1]È«²¿ÇåÁã*/
+ 128   1          SockInf[1].SourPort = Socket1SourPort;                           /* Ô´¶Ë¿Ú */
+ 129   1          SockInf[1].ProtoType = PROTO_TYPE_TCP;                           /* TCPÄ£Ê½ */
+ 130   1          SockInf[1].TcpMode = TCP_SERVER_MODE;                            /* TCP·þÎñÆ÷Ä£Ê½ */
+ 131   1      
+ 132   1          memset(&SockInf[2],0,sizeof(SockInf[2]));                        /* ½«SockInf[2]È«²¿ÇåÁã*/
+ 133   1          memcpy(SockInf[2].IPAddr,Socket2DesIP,sizeof(Socket2DesIP));     /* ½«Ä¿µÄIPµØÖ·Ð´Èë */
+ 134   1          SockInf[2].DesPort = Socket2DesPort;                             /* Ä¿µÄ¶Ë¿Ú */
+ 135   1          SockInf[2].SourPort = Socket2SourPort;                           /* Ô´¶Ë¿Ú */
+ 136   1          SockInf[2].ProtoType = PROTO_TYPE_TCP;                           /* TCPÄ£Ê½ */
+ 137   1          SockInf[2].TcpMode = TCP_CLIENT_MODE;                            /* TCP¿Í»§¶ËÄ£Ê½ */
+ 138   1      
+ 139   1          memset(&SockInf[3],0,sizeof(SockInf[3]));                        /* ½«SockInf[3]È«²¿ÇåÁã*/
+ 140   1          memcpy(SockInf[3].IPAddr,Socket3DesIP,sizeof(Socket3DesIP));     /* ½«Ä¿µÄIPµØÖ·Ð´Èë */
+ 141   1          SockInf[3].ProtoType = PROTO_TYPE_IP_RAW;                        /* IPRAW */
+ 142   1      }
+ 143          
+ 144          /**********************************************************************************
+ 145          * Function Name  : CH395SocketInitOpen
+ 146          * Description    : ÅäÖÃCH395 socket ²ÎÊý£¬³õÊ¼»¯²¢´ò¿ªsocket
+ 147          * Input          : None
+ 148          * Output         : None
+ 149          * Return         : None
+ 150          **********************************************************************************/
+ 151          void CH395SocketInitOpen(void)
+ 152          {
+ 153   1          UINT8 i;
+ 154   1      
+ 155   1          /* socket 0ÎªUDPÄ£Ê½ */
+ 156   1          CH395SetSocketDesIP(0,SockInf[0].IPAddr);                        /* ÉèÖÃsocket 0Ä¿±êIPµØÖ· */         
+ 157   1          CH395SetSocketProtType(0,PROTO_TYPE_UDP);                        /* ÉèÖÃsocket 0Ð­ÒéÀàÐÍ */
+ 158   1          CH395SetSocketDesPort(0,SockInf[0].DesPort);                     /* ÉèÖÃsocket 0Ä¿µÄ¶Ë¿Ú */
+ 159   1          CH395SetSocketSourPort(0,SockInf[0].SourPort);                   /* ÉèÖÃsocket 0Ô´¶Ë¿Ú */
+ 160   1          i = CH395OpenSocket(0);                                          /* ´ò¿ªsocket 0 */
+ 161   1          mStopIfError(i);
+ 162   1      
+ 163   1          /* socket 1ÎªTCP ServerÄ£Ê½,ÎÞÐèÉèÖÃÄ¿µÄIPºÍÔ´¶Ë¿Ú */
+ 164   1          CH395SetSocketProtType(1,PROTO_TYPE_TCP);                        /* ÉèÖÃsocket 1Ð­ÒéÀàÐÍ */
+ 165   1          CH395SetSocketSourPort(1,SockInf[1].SourPort);                   /* ÉèÖÃsocket 1Ô´¶Ë¿Ú */
+ 166   1          i = CH395OpenSocket(1);                                          /* ´ò¿ªsocket 1 */
+ 167   1          mStopIfError(i);                                                 /* ¼ì²éÊÇ·ñ³É¹¦ */
+ 168   1          i = CH395TCPListen (1);                                          /* ¿ªÊ¼¼àÌý */
+ 169   1          mStopIfError(i);                                                 /* ¼ì²éÊÇ·ñ³É¹¦ */
+ 170   1      
+ 171   1          /* socket 2ÎªTCP ClientÄ£Ê½ */
+ 172   1          CH395SetSocketDesIP(2,SockInf[2].IPAddr);                        /* ÉèÖÃsocket 2Ä¿±êIPµØÖ· */
+ 173   1          CH395SetSocketProtType(2,PROTO_TYPE_TCP);                        /* ÉèÖÃsocket 2Ð­ÒéÀàÐÍ */
+ 174   1          CH395SetSocketDesPort(2,SockInf[2].DesPort);                     /* ÉèÖÃsocket 2Ä¿µÄ¶Ë¿Ú */
+ 175   1          CH395SetSocketSourPort(2,SockInf[2].SourPort);                   /* ÉèÖÃsocket 2Ô´¶Ë¿Ú */
+ 176   1          i = CH395OpenSocket(2);                                          /* ´ò¿ªsocket 2 */
+ 177   1          mStopIfError(i);                                                 /* ¼ì²éÊÇ·ñ³É¹¦ */
+C51 COMPILER V9.54   CH395                                                                 08/15/2020 00:24:47 PAGE 4   
+
+ 178   1          i = CH395TCPConnect(2);                                          /* ¿ªÊ¼Á¬½Ó */
+ 179   1          mStopIfError(i);                                                 /* ¼ì²éÊÇ·ñ³É¹¦,Èç¹ûÊ§°Ü£¬Ôòsocket»á¹
+             -Ø±Õ */
+ 180   1      
+ 181   1          /* socket 3ÎªIP RAWÄ£Ê½ */
+ 182   1          CH395SetSocketDesIP(3,SockInf[3].IPAddr);                        /* ÉèÖÃsocket 3Ä¿±êIPµØÖ· */
+ 183   1          CH395SetSocketProtType(3,PROTO_TYPE_IP_RAW);                     /* ÉèÖÃIP RAWÄ£Ê½ÏÂµÄIP°üÐ­Òé×Ö¶Î */
+ 184   1          CH395SetSocketIPRAWProto(3,IPRawProto);                          /* ÉèÖÃÐ­Òé×Ö¶Î */
+ 185   1          i = CH395OpenSocket(3);                                          /* ´ò¿ªsocket 3 */
+ 186   1          mStopIfError(i);                                                 /* ¼ì²éÊÇ·ñ³É¹¦ */
+ 187   1      }
+ 188          
+ 189          /**********************************************************************************
+ 190          * Function Name  : CH395SocketInterrupt
+ 191          * Description    : CH395 socket ÖÐ¶Ï,ÔÚÈ«¾ÖÖÐ¶ÏÖÐ±»µ÷ÓÃ
+ 192          * Input          : sockindex  SocketË÷Òý
+ 193          * Output         : None
+ 194          * Return         : None
+ 195          **********************************************************************************/
+ 196          void CH395SocketInterrupt(UINT8 sockindex)
+ 197          {
+ 198   1          UINT8  sock_int_socket;
+ 199   1          UINT8  i;
+ 200   1          UINT16 len;
+ 201   1          UINT16 tmp;
+ 202   1          UINT8 idata buf[10];
+ 203   1      
+ 204   1          sock_int_socket = CH395GetSocketInt(sockindex);                  /* »ñÈ¡socket µÄÖÐ¶Ï×´Ì¬ */
+ 205   1          if(sock_int_socket & SINT_STAT_SENBUF_FREE)                      /* ·¢ËÍ»º³åÇø¿ÕÏÐ£¬¿ÉÒÔ¼ÌÐøÐ´ÈëÒª·¢ËÍ
+             -µÄÊý¾Ý */
+ 206   1          {
+ 207   2      
+ 208   2          }
+ 209   1          if(sock_int_socket & SINT_STAT_SEND_OK)                          /* ·¢ËÍÍê³ÉÖÐ¶Ï */
+ 210   1          {
+ 211   2          }
+ 212   1          if(sock_int_socket & SINT_STAT_RECV)                             /* ½ÓÊÕÖÐ¶Ï */
+ 213   1          {
+ 214   2              len = CH395GetRecvLength(sockindex);                         /* »ñÈ¡µ±Ç°»º³åÇøÄÚÊý¾Ý³¤¶È */
+ 215   2      #if CH395_DEBUG
+                      printf("receive len = %d\n" ,len);
+              #endif
+ 218   2              if(len == 0)return;
+ 219   2              if(len > 100)len = 100;                                      /* ·¢ËÍ»º³åÇø×î´óÎª2048 */
+ 220   2              CH395GetRecvData(sockindex,len,MyBuffer[sockindex]);         /* ¶ÁÈ¡Êý¾Ý */
+ 221   2              for(tmp =0; tmp < len; tmp++)                                /* ½«ËùÓÐÊý¾Ý°´Î»È¡·´ */
+ 222   2              {
+ 223   3                  MyBuffer[sockindex][tmp] = ~MyBuffer[sockindex][tmp];
+ 224   3              }
+ 225   2              CH395SendData(sockindex,MyBuffer[sockindex],len);
+ 226   2      
+ 227   2         }
+ 228   1         if(sock_int_socket & SINT_STAT_CONNECT)                            /* Á¬½ÓÖÐ¶Ï£¬½öÔÚTCPÄ£Ê½ÏÂÓÐÐ§*/
+ 229   1         {
+ 230   2      #if CH395_DEBUG
+                     printf("Tcp Connect\n");
+              #endif
+ 233   2             if(SockInf[sockindex].TcpMode == TCP_SERVER_MODE)              /* Èç¹ûsocket Îª·þÎñÆ÷Ä£Ê½£¬ÓÃ»§¿ÉÒÔ
+             -»ñÈ¡Ô¶¶ËµÄIPºÍ¶Ë¿Ú*/
+ 234   2             {
+ 235   3                 CH395CMDGetRemoteIPP(sockindex,buf);
+ 236   3                 tmp = (UINT16)(buf[5]<<8) + buf[4];
+C51 COMPILER V9.54   CH395                                                                 08/15/2020 00:24:47 PAGE 5   
+
+ 237   3      #if CH395_DEBUG
+                       printf("IP address = %d.%d.%d.%d\n",(UINT16)buf[0],(UINT16)buf[1],(UINT16)buf[2],(UINT16)buf[3]); 
+             -                   
+                       printf("Port = %d\n",tmp);    
+              #endif
+ 241   3      
+ 242   3             }
+ 243   2         }
+ 244   1         if(sock_int_socket & SINT_STAT_DISCONNECT)                        /* ¶Ï¿ªÖÐ¶Ï£¬½öÔÚTCPÄ£Ê½ÏÂÓÐÐ§ */
+ 245   1         {
+ 246   2         }
+ 247   1         if(sock_int_socket & SINT_STAT_TIM_OUT)                           /* ³¬Ê±ÖÐ¶Ï£¬½öÔÚTCPÄ£Ê½ÏÂÓÐÐ§ */
+ 248   1         {
+ 249   2      /* ²úÉú³¬Ê±ÖÐ¶Ï±íÊ¾Á¬½Ó/·¢ËÍ/½ÓÊÕÊý¾Ý³¬Ê±»òÕßÊ§°Ü£¬²úÉú³¬Ê±Ê±CH395Ð¾Æ¬ÄÚ²¿½«»á½«´Ë    */
+ 250   2      /* socket¹Ø±Õ£¬ÔÚÄ³Ð©Çé¿öÏÂCH395²¢²»»áÖØÊÔÁ¬½Ó£¬ÀýÈçÔ¶¶Ë¶Ë¿ÚÎ´´ò¿ª£¬Èç¹ûCH395Á¬½Ó£¬Ôò */
+ 251   2      /* Ô¶¶ËÉè±¸¿ÉÄÜ»á·¢³öRSTÇ¿ÖÆ½«´ËÁ¬½Ó¸´Î»£¬´ËÊ±CH395ÈÔÈ»»á²úÉú³¬Ê±ÖÐ¶Ï¡£±¾³ÌÐò½ö×÷ÑÝÊ¾ */
+ 252   2      /* Êµ¼ÊÓ¦ÓÃÖÐ²»ÍÆ¼ö²úÉú²úÉú³¬Ê±ÖÐ¶ÏºóÁ¢¼´Á¬½Ó£¬¿ÉÒÔ¼ä¸ôÒ»¶¨Ê±¼äÄÚÖØÐÂ´ò¿ªsocket½øÐÐÁ¬ */
+ 253   2      /* ¼´¿É¡£*/        
+ 254   2             if(SockInf[sockindex].TcpMode == TCP_CLIENT_MODE)             
+ 255   2             {
+ 256   3                 mDelaymS(200);                                            /* ÑÓÊ±200MSºóÔÙ´ÎÖØÊÔ£¬Ã»ÓÐ±ØÒª¹ýÓÚÆ
+             -µ·±Á¬½Ó */
+ 257   3                 i = CH395OpenSocket(sockindex);
+ 258   3                 mStopIfError(i);
+ 259   3                 CH395TCPConnect(sockindex);                               /* ¿ªÊ¼Á¬½Ó */
+ 260   3                 mStopIfError(i);
+ 261   3             }
+ 262   2          }
+ 263   1      }
+ 264          
+ 265          /********************************************************************************
+ 266          * Function Name  : CH395GlobalInterrupt
+ 267          * Description    : CH395È«¾ÖÖÐ¶Ïº¯Êý
+ 268          * Input          : None
+ 269          * Output         : None
+ 270          * Return         : None
+ 271          *********************************************************************************/
+ 272          void CH395GlobalInterrupt(void)
+ 273          {
+ 274   1         UINT16  init_status;
+ 275   1         UINT8  buf[10]; 
+ 276   1       
+ 277   1          init_status = CH395CMDGetGlobIntStatus_ALL();
+ 278   1          if(init_status & GINT_STAT_UNREACH)                              /* ²»¿É´ïÖÐ¶Ï£¬¶ÁÈ¡²»¿É´ïÐÅÏ¢ */
+ 279   1          {
+ 280   2              CH395CMDGetUnreachIPPT(buf);                                
+ 281   2          }
+ 282   1          if(init_status & GINT_STAT_IP_CONFLI)                            /* ²úÉúIP³åÍ»ÖÐ¶Ï£¬½¨ÒéÖØÐÂÐÞ¸ÄCH395µ
+             -Ä IP£¬²¢³õÊ¼»¯CH395*/
+ 283   1          {
+ 284   2          }
+ 285   1          if(init_status & GINT_STAT_PHY_CHANGE)                           /* ²úÉúPHY¸Ä±äÖÐ¶Ï*/
+ 286   1          {
+ 287   2      #if CH395_DEBUG
+                      printf("Init status : GINT_STAT_PHY_CHANGE\n");
+              #endif
+ 290   2        }
+ 291   1          if(init_status & GINT_STAT_SOCK0)
+ 292   1          {
+ 293   2              CH395SocketInterrupt(0);                                     /* ´¦Àísocket 0ÖÐ¶Ï*/
+ 294   2          }
+ 295   1          if(init_status & GINT_STAT_SOCK1)                               
+C51 COMPILER V9.54   CH395                                                                 08/15/2020 00:24:47 PAGE 6   
+
+ 296   1          {
+ 297   2              CH395SocketInterrupt(1);                                     /* ´¦Àísocket 1ÖÐ¶Ï*/
+ 298   2          }
+ 299   1          if(init_status & GINT_STAT_SOCK2)                                
+ 300   1          {
+ 301   2              CH395SocketInterrupt(2);                                     /* ´¦Àísocket 2ÖÐ¶Ï*/
+ 302   2          }
+ 303   1          if(init_status & GINT_STAT_SOCK3)                                
+ 304   1          {
+ 305   2              CH395SocketInterrupt(3);                                     /* ´¦Àísocket 3ÖÐ¶Ï*/
+ 306   2          }
+ 307   1          if(init_status & GINT_STAT_SOCK4)
+ 308   1          {
+ 309   2              CH395SocketInterrupt(4);                                     /* ´¦Àísocket 4ÖÐ¶Ï*/
+ 310   2          }
+ 311   1          if(init_status & GINT_STAT_SOCK5)                                
+ 312   1          {
+ 313   2              CH395SocketInterrupt(5);                                     /* ´¦Àísocket 5ÖÐ¶Ï*/
+ 314   2          }
+ 315   1          if(init_status & GINT_STAT_SOCK6)                                
+ 316   1          {
+ 317   2              CH395SocketInterrupt(6);                                     /* ´¦Àísocket 6ÖÐ¶Ï*/
+ 318   2          }
+ 319   1          if(init_status & GINT_STAT_SOCK7)                                
+ 320   1          {
+ 321   2              CH395SocketInterrupt(7);                                     /* ´¦Àísocket 7ÖÐ¶Ï*/
+ 322   2          }
+ 323   1      }
+ 324          
+ 325          /**********************************************************************************
+ 326          * Function Name  : CH395Init
+ 327          * Description    : ÅäÖÃCH395µÄIP,GWIP,MACµÈ²ÎÊý£¬²¢³õÊ¼»¯
+ 328          * Input          : None
+ 329          * Output         : None
+ 330          * Return         : º¯ÊýÖ´ÐÐ½á¹û
+ 331          **********************************************************************************/
+ 332          UINT8  CH395Init(void)
+ 333          {
+ 334   1          UINT8 i;
+ 335   1          
+ 336   1          i = CH395CMDCheckExist(0x65);   
+ 337   1          if(i != 0x9a)return CH395_ERR_UNKNOW;                            /* ²âÊÔÃüÁî£¬Èç¹ûÎÞ·¨Í¨¹ý·µ»Ø0XFA */
+ 338   1                                                                           /* ·µ»Ø0XFAÒ»°ãÎªÓ²¼þ´íÎó»òÕß¶ÁÐ´Ê±Ðò
+             -²»¶Ô */
+ 339   1      #if (CH395_OP_INTERFACE_MODE == 5)                                   
+              #ifdef UART_WORK_BAUDRATE
+                  CH395CMDSetUartBaudRate(UART_WORK_BAUDRATE);                     /* ÉèÖÃ²¨ÌØÂÊ */   
+                  mDelaymS(1);
+                  SetMCUBaudRate();
+              #endif
+              #endif
+ 346   1          CH395CMDSetIPAddr(CH395Inf.IPAddr);                              /* ÉèÖÃCH395µÄIPµØÖ· */
+ 347   1          CH395CMDSetGWIPAddr(CH395Inf.GWIPAddr);                          /* ÉèÖÃÍø¹ØµØÖ· */
+ 348   1          CH395CMDSetMASKAddr(CH395Inf.MASKAddr);                          /* ÉèÖÃ×ÓÍøÑÚÂë£¬Ä¬ÈÏÎª255.255.255.0*
+             -/   
+ 349   1          i = CH395CMDInitCH395();                                         /* ³õÊ¼»¯CH395Ð¾Æ¬ */
+ 350   1          return i;
+ 351   1      }
+ 352          
+ 353          /**********************************************************************************
+ 354          * Function Name  : mInitSTDIO
+ 355          * Description    : ´®¿Ú³õÊ¼»¯,½öµ÷ÊÔÊ¹ÓÃ
+C51 COMPILER V9.54   CH395                                                                 08/15/2020 00:24:47 PAGE 7   
+
+ 356          * Input          : None
+ 357          * Output         : None
+ 358          * Return         : None
+ 359          **********************************************************************************/
+ 360          void mInitSTDIO( void )
+ 361          {
+ 362   1          SCON = 0x50;
+ 363   1          PCON = 0x80;
+ 364   1          TMOD = 0x21;
+ 365   1          TH1 = 0xf3;                                                      /* 24MHz¾§Õñ, 9600bps */
+ 366   1          TR1 = 1;
+ 367   1          TI = 1;
+ 368   1      }
+ 369          
+ 370          /**********************************************************************************
+ 371          * Function Name  : main
+ 372          * Description    : mainÖ÷º¯Êý
+ 373          * Input          : None
+ 374          * Output         : None
+ 375          * Return         : None
+ 376          **********************************************************************************/
+ 377          int main(void)
+ 378          {
+ 379   1          UINT8 i;
+ 380   1          mDelaymS(100);
+ 381   1          mInitSTDIO();                                                    /* ÑÓÊ±100ºÁÃë */ 
+ 382   1      #if CH395_DEBUG
+                  printf("CH395EVT Test Demo\n");
+              #endif
+ 385   1          CH395_PORT_INIT();
+ 386   1          InitCH395InfParam();                                             /* ³õÊ¼»¯CH395Ïà¹Ø±äÁ¿ */
+ 387   1          i = CH395Init();                                                 /* ³õÊ¼»¯CH395Ð¾Æ¬ */
+ 388   1          mStopIfError(i);                                                                     
+ 389   1        
+ 390   1          while(1)
+ 391   1          {                                                                /* µÈ´ýÒÔÌ«ÍøÁ¬½Ó³É¹¦*/
+ 392   2             if(CH395CMDGetPHYStatus() == PHY_DISCONN)                     /* ²éÑ¯CH395ÊÇ·ñÁ¬½Ó */
+ 393   2             {
+ 394   3                 mDelaymS(200);                                            /* Î´Á¬½ÓÔòµÈ´ý200MSºóÔÙ´Î²éÑ¯ */
+ 395   3             }
+ 396   2             else 
+ 397   2             {
+ 398   3      #if CH395_DEBUG
+                         printf("CH395 Connect Ethernet\n");                       /* CH395Ð¾Æ¬Á¬½Óµ½ÒÔÌ«Íø£¬´ËÊ±»á²úÉúÖ
+             -Ð¶Ï */
+              #endif
+ 401   3                 break;
+ 402   3             }
+ 403   2          }
+ 404   1          InitSocketParam();                                                /* ³õÊ¼»¯socketÏà¹Ø±äÁ¿ */
+ 405   1          CH395SocketInitOpen();
+ 406   1          while(1)
+ 407   1          {
+ 408   2             if(CH395_INT_WIRE == 0)CH395GlobalInterrupt();
+ 409   2          }
+ 410   1      }
+ 411          
+ 412          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   3436    ----
+C51 COMPILER V9.54   CH395                                                                 08/15/2020 00:24:47 PAGE 8   
+
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =    586     120
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----      10
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

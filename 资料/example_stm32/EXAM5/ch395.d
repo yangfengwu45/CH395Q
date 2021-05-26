@@ -1,0 +1,15 @@
+.\ch395.o: CH395.C
+.\ch395.o: E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
+.\ch395.o: E:\MDK5\ARM\CMSIS\Include\core_cm3.h
+.\ch395.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+.\ch395.o: E:\MDK5\ARM\CMSIS\Include\core_cmInstr.h
+.\ch395.o: E:\MDK5\ARM\CMSIS\Include\core_cmFunc.h
+.\ch395.o: E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
+.\ch395.o: E:\MDK5\ARM\ARMCC\Bin\..\include\string.h
+.\ch395.o: ../system/system.h
+.\ch395.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
+.\ch395.o: ../PUB/CH395inc.h
+.\ch395.o: CH395.H
+.\ch395.o: ../PUB/CH395SPI_HW.C
+.\ch395.o: ../PUB/CH395CMD.C
+.\ch395.o: ../PUB/ch395cmd.h

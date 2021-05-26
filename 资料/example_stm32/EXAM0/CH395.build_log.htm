@@ -1,0 +1,64 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: yang yang, qqqqq, LIC=QF82M-X6II9-WFRI7-EP5XW-88HH1-D3FPH
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  E:\MDK5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DARMSTM.DLL V1.65.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.13.0
+Dialog DLL:      TARMSTM.DLL V1.64.0.0
+ 
+<h2>Project:</h2>
+F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM0\CH395.uvprojx
+Project File Date:  10/31/2014
+
+<h2>Output:</h2>
+Build target 'Demo'
+creating preprocessor file for CH395.C...
+CH395.C(13): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include <stm32f10x_lib.h>              /* STM32F10x库定义 */
+CH395.C: 0 warnings, 1 error
+compiling CH395.C...
+CH395.C(13): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include <stm32f10x_lib.h>              /* STM32F10x库定义 */
+CH395.C: 0 warnings, 1 error
+creating preprocessor file for stm32f10x_it.c...
+..\SYSTEM\stm32f10x_it.h(23): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include "stm32f10x_lib.h"
+..\SYSTEM\stm32f10x_it.c: 0 warnings, 1 error
+compiling stm32f10x_it.c...
+..\SYSTEM\stm32f10x_it.h(23): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include "stm32f10x_lib.h"
+..\SYSTEM\stm32f10x_it.c: 0 warnings, 1 error
+creating preprocessor file for System_Init.c...
+..\SYSTEM\System_Init.c(8): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include <stm32f10x_lib.h>              /* STM32F10x库 */
+..\SYSTEM\System_Init.c: 0 warnings, 1 error
+compiling System_Init.c...
+..\SYSTEM\System_Init.c(8): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include <stm32f10x_lib.h>              /* STM32F10x库 */
+..\SYSTEM\System_Init.c: 0 warnings, 1 error
+assembling STM32F10x.s...
+".\CH395.axf" - 6 Error(s), 0 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM0\RTE
+  E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+</pre>
+</body>
+</html>

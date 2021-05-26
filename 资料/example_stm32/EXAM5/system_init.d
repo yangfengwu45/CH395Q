@@ -1,0 +1,9 @@
+.\system_init.o: ..\System\System_Init.c
+.\system_init.o: E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
+.\system_init.o: E:\MDK5\ARM\CMSIS\Include\core_cm3.h
+.\system_init.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+.\system_init.o: E:\MDK5\ARM\CMSIS\Include\core_cmInstr.h
+.\system_init.o: E:\MDK5\ARM\CMSIS\Include\core_cmFunc.h
+.\system_init.o: E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
+.\system_init.o: ..\System\system.h
+.\system_init.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdio.h

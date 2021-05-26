@@ -1,0 +1,29 @@
+Dependencies for Project 'CH395', Target 'Demo': (DO NOT MODIFY !)
+F (.\CH395.C)(0x5F36EA7C)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM5\RTE-I E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\MDK5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD-o .\ch395.o --omf_browse .\ch395.crf --depend .\ch395.d)
+I (E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h)(0x528979E6)
+I (E:\MDK5\ARM\CMSIS\Include\core_cm3.h)(0x53463974)
+I (E:\MDK5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (E:\MDK5\ARM\CMSIS\Include\core_cmInstr.h)(0x53463974)
+I (E:\MDK5\ARM\CMSIS\Include\core_cmFunc.h)(0x5D121704)
+I (E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h)(0x4F1E2E3C)
+I (E:\MDK5\ARM\ARMCC\include\string.h)(0x5475F300)
+I (../system/system.h)(0x52C60C6E)
+I (E:\MDK5\ARM\ARMCC\include\stdio.h)(0x5CD97DE9)
+I (../PUB/CH395inc.h)(0x53F6F224)
+I (CH395.H)(0x52CB9778)
+I (../PUB/CH395SPI_HW.C)(0x551137AE)
+I (../PUB/CH395CMD.C)(0x53F6F724)
+I (../PUB/ch395cmd.h)(0x53F6F72E)
+F (..\System\stm32f10x_it.c)(0x52CB504E)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM5\RTE-I E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\MDK5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD-o .\stm32f10x_it.o --omf_browse .\stm32f10x_it.crf --depend .\stm32f10x_it.d)
+I (..\System\stm32f10x_it.h)(0x472FFAFA)
+F (..\System\System_Init.c)(0x5F36C3BF)(-c --cpu Cortex-M3 -g -O2 --apcs=interwork -I F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM5\RTE-I E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\MDK5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD-o .\system_init.o --omf_browse .\system_init.crf --depend .\system_init.d)
+I (E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h)(0x528979E6)
+I (E:\MDK5\ARM\CMSIS\Include\core_cm3.h)(0x53463974)
+I (E:\MDK5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (E:\MDK5\ARM\CMSIS\Include\core_cmInstr.h)(0x53463974)
+I (E:\MDK5\ARM\CMSIS\Include\core_cmFunc.h)(0x5D121704)
+I (E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\System\system.h)(0x52C60C6E)
+I (E:\MDK5\ARM\ARMCC\include\stdio.h)(0x5CD97DE9)
+F (..\System\STM32F10x.s)(0x48D843B0)(--cpu Cortex-M3 -g --apcs=interwork -I F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM5\RTE-I E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I E:\MDK5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 514" --pd "STM32F10X_HD SETA 1"--list .\stm32f10x.lst --xref -o .\stm32f10x.o --depend .\stm32f10x.d)
+F (..\System\STM32F10xR.LIB)(0x4CCA4934)()
