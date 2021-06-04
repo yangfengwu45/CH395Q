@@ -444,10 +444,10 @@ ARM Macro Assembler    Page 7
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=.\stm32f10x.d -o.\stm32f10x.o -IF:\AltiumDesigner\CH395\CH395DEMO_
-STM32_NEW\EXAM5\RTE -IE:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include 
--IE:\MDK5\ARM\CMSIS\Include --predefine="__UVISION_VERSION SETA 514" --predefin
-e="STM32F10X_HD SETA 1" --list=.\stm32f10x.lst ..\System\STM32F10x.s
+ork --depend=.\stm32f10x.d -o.\stm32f10x.o -IH:\LearnCH395\CH395Q\×ÊÁÏ\example_
+stm32\EXAM5\RTE -IE:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include -IE:
+\MDK5\ARM\CMSIS\Include --predefine="__UVISION_VERSION SETA 514" --predefine="S
+TM32F10X_HD SETA 1" --list=.\stm32f10x.lst ..\System\STM32F10x.s
 
 
 

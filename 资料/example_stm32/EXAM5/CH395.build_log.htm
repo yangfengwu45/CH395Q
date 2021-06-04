@@ -21,8 +21,8 @@ Target DLL:      Segger\JL2CM3.dll V2.99.13.0
 Dialog DLL:      TARMSTM.DLL V1.64.0.0
  
 <h2>Project:</h2>
-F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM5\CH395.uvprojx
-Project File Date:  08/15/2020
+H:\LearnCH395\CH395Q\资料\example_stm32\EXAM5\CH395.uvprojx
+Project File Date:  06/04/2021
 
 <h2>Output:</h2>
 Build target 'Demo'
@@ -97,10 +97,15 @@ compiling CH395.C...
 ../PUB/CH395CMD.C(71): error:  #20: identifier "GPIO_Pin_0" is undefined
       xEndCH395Cmd();
 CH395.C: 4 warnings, 30 errors
+creating preprocessor file for stm32f10x_it.c...
+..\System\stm32f10x_it.h(23): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include "stm32f10x_lib.h"
+..\System\stm32f10x_it.c: 0 warnings, 1 error
 compiling stm32f10x_it.c...
 ..\System\stm32f10x_it.h(23): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
   #include "stm32f10x_lib.h"
 ..\System\stm32f10x_it.c: 0 warnings, 1 error
+creating preprocessor file for System_Init.c...
 compiling System_Init.c...
 ..\System\System_Init.c(24): warning:  #223-D: function "RCC_DeInit" declared implicitly
         RCC_DeInit( );
@@ -201,10 +206,11 @@ compiling System_Init.c...
 ..\System\System_Init.c(179): error:  #20: identifier "USART_StopBits_1" is undefined
         USART_InitStructure.USART_StopBits = USART_StopBits_1;
 ..\System\System_Init.c: 19 warnings, 30 errors
-".\CH395.axf" - 61 Error(s), 23 Warning(s).
+assembling STM32F10x.s...
+".\CH395.axf" - 62 Error(s), 23 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
-  F:\AltiumDesigner\CH395\CH395DEMO_STM32_NEW\EXAM5\RTE
+  H:\LearnCH395\CH395Q\资料\example_stm32\EXAM5\RTE
   E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
 
 <h2>Collection of Component Files used:</h2>
