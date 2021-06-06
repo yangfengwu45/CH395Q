@@ -28,7 +28,7 @@
 //TX --  连接模块TX引脚
 #define CH395_TX_PORT  GPIOA
 #define CH395_TX_PIN   GPIO_Pin_3
-//INT  -- 连接模块INT引脚 (检测到中断信号之后再获取数据,未使用)
+//INT  -- 连接模块INT引脚 (检测到该引脚低电平信号之后再获取数据)
 #define CH395_INT_PORT  GPIOA
 #define CH395_INT_PIN   GPIO_Pin_0
 /***********************************************************************/
