@@ -1,0 +1,10 @@
+.\output\netdb.o: ..\LWIP\lwip-1.4.1\src\api\netdb.c
+.\output\netdb.o: ..\LWIP\lwip-1.4.1\src\include\lwip/netdb.h
+.\output\netdb.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
+.\output\netdb.o: ..\LWIP\lwip_app\lwip_comm\lwipopts.h
+.\output\netdb.o: ..\LWIP\lwip-1.4.1\src\include\lwip/debug.h
+.\output\netdb.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
+.\output\netdb.o: ..\LWIP\arch/cc.h
+.\output\netdb.o: ..\LWIP\arch/cpu.h
+.\output\netdb.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\netdb.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
