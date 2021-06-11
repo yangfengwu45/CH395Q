@@ -1,0 +1,1 @@
+.\stm32f10x.o: ..\SYSTEM\STM32F10x.s

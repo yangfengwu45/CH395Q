@@ -1,0 +1,157 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: yang yang, qqqqq, LIC=QF82M-X6II9-WFRI7-EP5XW-88HH1-D3FPH
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  E:\MDK5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DARMSTM.DLL V1.65.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.13.0
+Dialog DLL:      TARMSTM.DLL V1.64.0.0
+ 
+<h2>Project:</h2>
+H:\LearnCH395\CH395Q\资料\example_stm32\EXAM3\CH395.uvprojx
+Project File Date:  06/06/2021
+
+<h2>Output:</h2>
+Build target 'Demo'
+creating preprocessor file for CH395.C...
+CH395.C(13): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include <stm32f10x_lib.h>              /* STM32F10x库定义 */
+CH395.C: 0 warnings, 1 error
+compiling CH395.C...
+CH395.C(13): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include <stm32f10x_lib.h>              /* STM32F10x库定义 */
+CH395.C: 0 warnings, 1 error
+creating preprocessor file for stm32f10x_it.c...
+..\SYSTEM\stm32f10x_it.h(23): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include "stm32f10x_lib.h"
+..\SYSTEM\stm32f10x_it.c: 0 warnings, 1 error
+compiling stm32f10x_it.c...
+..\SYSTEM\stm32f10x_it.h(23): error:  #5: cannot open source input file "stm32f10x_lib.h": No such file or directory
+  #include "stm32f10x_lib.h"
+..\SYSTEM\stm32f10x_it.c: 0 warnings, 1 error
+creating preprocessor file for System_Init.c...
+compiling System_Init.c...
+..\SYSTEM\System_Init.c(24): warning:  #223-D: function "RCC_DeInit" declared implicitly
+        RCC_DeInit( );
+..\SYSTEM\System_Init.c(27): warning:  #223-D: function "RCC_HSEConfig" declared implicitly
+        RCC_HSEConfig( RCC_HSE_ON );
+..\SYSTEM\System_Init.c(27): error:  #20: identifier "RCC_HSE_ON" is undefined
+        RCC_HSEConfig( RCC_HSE_ON );
+..\SYSTEM\System_Init.c(30): warning:  #223-D: function "RCC_WaitForHSEStartUp" declared implicitly
+        HSEStartUpStatus = RCC_WaitForHSEStartUp( );
+..\SYSTEM\System_Init.c(30): warning:  #188-D: enumerated type mixed with another type
+        HSEStartUpStatus = RCC_WaitForHSEStartUp( );
+..\SYSTEM\System_Init.c(35): warning:  #223-D: function "FLASH_PrefetchBufferCmd" declared implicitly
+        FLASH_PrefetchBufferCmd( FLASH_PrefetchBuffer_Enable );
+..\SYSTEM\System_Init.c(35): error:  #20: identifier "FLASH_PrefetchBuffer_Enable" is undefined
+        FLASH_PrefetchBufferCmd( FLASH_PrefetchBuffer_Enable );
+..\SYSTEM\System_Init.c(38): warning:  #223-D: function "FLASH_SetLatency" declared implicitly
+        FLASH_SetLatency( FLASH_Latency_2 );
+..\SYSTEM\System_Init.c(38): error:  #20: identifier "FLASH_Latency_2" is undefined
+        FLASH_SetLatency( FLASH_Latency_2 );
+..\SYSTEM\System_Init.c(41): warning:  #223-D: function "RCC_HCLKConfig" declared implicitly
+                RCC_HCLKConfig( RCC_SYSCLK_Div1 ); 
+..\SYSTEM\System_Init.c(41): error:  #20: identifier "RCC_SYSCLK_Div1" is undefined
+                RCC_HCLKConfig( RCC_SYSCLK_Div1 ); 
+..\SYSTEM\System_Init.c(44): warning:  #223-D: function "RCC_PCLK2Config" declared implicitly
+                RCC_PCLK2Config( RCC_HCLK_Div1 ); 
+..\SYSTEM\System_Init.c(44): error:  #20: identifier "RCC_HCLK_Div1" is undefined
+                RCC_PCLK2Config( RCC_HCLK_Div1 ); 
+..\SYSTEM\System_Init.c(47): warning:  #223-D: function "RCC_PCLK1Config" declared implicitly
+                RCC_PCLK1Config( RCC_HCLK_Div2 );
+..\SYSTEM\System_Init.c(47): error:  #20: identifier "RCC_HCLK_Div2" is undefined
+                RCC_PCLK1Config( RCC_HCLK_Div2 );
+..\SYSTEM\System_Init.c(67): warning:  #223-D: function "RCC_PLLConfig" declared implicitly
+                RCC_PLLConfig( RCC_PLLSource_HSE_Div1, RCC_PLLMul_9 );
+..\SYSTEM\System_Init.c(67): error:  #20: identifier "RCC_PLLSource_HSE_Div1" is undefined
+                RCC_PLLConfig( RCC_PLLSource_HSE_Div1, RCC_PLLMul_9 );
+..\SYSTEM\System_Init.c(67): error:  #20: identifier "RCC_PLLMul_9" is undefined
+                RCC_PLLConfig( RCC_PLLSource_HSE_Div1, RCC_PLLMul_9 );
+..\SYSTEM\System_Init.c(71): warning:  #223-D: function "RCC_PLLCmd" declared implicitly
+                RCC_PLLCmd( ENABLE );
+..\SYSTEM\System_Init.c(74): warning:  #223-D: function "RCC_GetFlagStatus" declared implicitly
+                while( RCC_GetFlagStatus( RCC_FLAG_PLLRDY ) == RESET )
+..\SYSTEM\System_Init.c(74): error:  #20: identifier "RCC_FLAG_PLLRDY" is undefined
+                while( RCC_GetFlagStatus( RCC_FLAG_PLLRDY ) == RESET )
+..\SYSTEM\System_Init.c(79): warning:  #223-D: function "RCC_SYSCLKConfig" declared implicitly
+                RCC_SYSCLKConfig( RCC_SYSCLKSource_PLLCLK );
+..\SYSTEM\System_Init.c(79): error:  #20: identifier "RCC_SYSCLKSource_PLLCLK" is undefined
+                RCC_SYSCLKConfig( RCC_SYSCLKSource_PLLCLK );
+..\SYSTEM\System_Init.c(82): warning:  #223-D: function "RCC_GetSYSCLKSource" declared implicitly
+        while( RCC_GetSYSCLKSource( ) != 0x08 )
+..\SYSTEM\System_Init.c(87): warning:  #223-D: function "RCC_AHBPeriphClockCmd" declared implicitly
+                RCC_AHBPeriphClockCmd( RCC_AHBPeriph_DMA1, ENABLE );
+..\SYSTEM\System_Init.c(87): error:  #20: identifier "RCC_AHBPeriph_DMA1" is undefined
+                RCC_AHBPeriphClockCmd( RCC_AHBPeriph_DMA1, ENABLE );
+..\SYSTEM\System_Init.c(89): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+                RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB  | RCC_APB2Periph_GPIOC |
+..\SYSTEM\System_Init.c(89): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
+                RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB  | RCC_APB2Periph_GPIOC |
+..\SYSTEM\System_Init.c(89): error:  #20: identifier "RCC_APB2Periph_GPIOB" is undefined
+                RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB  | RCC_APB2Periph_GPIOC |
+..\SYSTEM\System_Init.c(89): error:  #20: identifier "RCC_APB2Periph_GPIOC" is undefined
+                RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB  | RCC_APB2Periph_GPIOC |
+..\SYSTEM\System_Init.c(90): error:  #20: identifier "RCC_APB2Periph_GPIOD" is undefined
+                                                                RCC_APB2Periph_GPIOD | RCC_APB2Periph_USART1 | RCC_APB2Periph_ADC1, ENABLE );
+..\SYSTEM\System_Init.c(90): error:  #20: identifier "RCC_APB2Periph_USART1" is undefined
+                                                                RCC_APB2Periph_GPIOD | RCC_APB2Periph_USART1 | RCC_APB2Periph_ADC1, ENABLE );
+..\SYSTEM\System_Init.c(90): error:  #20: identifier "RCC_APB2Periph_ADC1" is undefined
+                                                                RCC_APB2Periph_GPIOD | RCC_APB2Periph_USART1 | RCC_APB2Periph_ADC1, ENABLE );
+..\SYSTEM\System_Init.c(93): error:  #20: identifier "RCC_APB2Periph_AFIO" is undefined
+                RCC_APB2PeriphClockCmd( RCC_APB2Periph_AFIO, ENABLE );
+..\SYSTEM\System_Init.c(116): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+        NVIC_InitTypeDef        NVIC_InitStructure;
+..\SYSTEM\System_Init.c(119): warning:  #223-D: function "NVIC_SetVectorTable" declared implicitly
+        NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+..\SYSTEM\System_Init.c(119): error:  #20: identifier "NVIC_VectTab_FLASH" is undefined
+        NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+..\SYSTEM\System_Init.c(122): error:  #20: identifier "TIM2_IRQChannel" is undefined
+        NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQChannel;
+..\SYSTEM\System_Init.c(126): warning:  #223-D: function "NVIC_Init" declared implicitly
+        NVIC_Init(&NVIC_InitStructure);
+..\SYSTEM\System_Init.c(147): error:  #20: identifier "USART_InitTypeDef" is undefined
+        USART_InitTypeDef USART_InitStructure;
+..\SYSTEM\System_Init.c(148): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+        GPIO_InitTypeDef  GPIO_InitStructure;
+..\SYSTEM\System_Init.c(152): error:  #20: identifier "GPIO_Pin_9" is undefined
+        GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_9;
+..\SYSTEM\System_Init.c(153): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+..\SYSTEM\System_Init.c(154): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+        GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
+..\SYSTEM\System_Init.c(155): warning:  #223-D: function "GPIO_Init" declared implicitly
+        GPIO_Init( GPIOA, &GPIO_InitStructure );
+..\SYSTEM\System_Init.c(159): error:  #20: identifier "GPIO_Pin_10" is undefined
+        GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_10;
+..\SYSTEM\System_Init.c(160): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+        GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
+..\SYSTEM\System_Init.c(178): error:  #20: identifier "USART_WordLength_8b" is undefined
+        USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+..\SYSTEM\System_Init.c(179): error:  #20: identifier "USART_StopBits_1" is undefined
+        USART_InitStructure.USART_StopBits = USART_StopBits_1;
+..\SYSTEM\System_Init.c: 19 warnings, 30 errors
+assembling STM32F10x.s...
+".\CH395.axf" - 34 Error(s), 19 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  H:\LearnCH395\CH395Q\资料\example_stm32\EXAM3\RTE
+  E:\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+</pre>
+</body>
+</html>
