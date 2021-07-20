@@ -1,0 +1,10 @@
+.\output\lwip_sys.o: ..\LWIP\lwip-1.4.1\src\core\lwip_sys.c
+.\output\lwip_sys.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
+.\output\lwip_sys.o: ..\LWIP\lwip_app\lwip_comm\lwipopts.h
+.\output\lwip_sys.o: ..\LWIP\lwip-1.4.1\src\include\lwip/debug.h
+.\output\lwip_sys.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
+.\output\lwip_sys.o: ..\LWIP\arch/cc.h
+.\output\lwip_sys.o: ..\LWIP\arch/cpu.h
+.\output\lwip_sys.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\lwip_sys.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
+.\output\lwip_sys.o: ..\LWIP\lwip-1.4.1\src\include\lwip/lwip_sys.h

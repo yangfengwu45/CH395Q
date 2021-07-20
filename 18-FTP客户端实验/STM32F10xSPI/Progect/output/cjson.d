@@ -1,0 +1,9 @@
+.\output\cjson.o: ..\User\cJSON.c
+.\output\cjson.o: E:\MDK5\ARM\ARMCC\Bin\..\include\string.h
+.\output\cjson.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\cjson.o: E:\MDK5\ARM\ARMCC\Bin\..\include\math.h
+.\output\cjson.o: E:\MDK5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\output\cjson.o: E:\MDK5\ARM\ARMCC\Bin\..\include\float.h
+.\output\cjson.o: E:\MDK5\ARM\ARMCC\Bin\..\include\limits.h
+.\output\cjson.o: E:\MDK5\ARM\ARMCC\Bin\..\include\ctype.h
+.\output\cjson.o: ..\User\cJSON.h

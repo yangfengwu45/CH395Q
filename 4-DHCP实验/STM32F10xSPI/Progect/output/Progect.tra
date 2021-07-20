@@ -1,0 +1,39 @@
+*** Creating Trace Output File '.\output\Progect.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\output\stm32f10x_it.o"'
+### List of Objects: adding '".\output\main.o"'
+### List of Objects: adding '".\output\system.o"'
+### List of Objects: adding '".\output\gpio.o"'
+### List of Objects: adding '".\output\delay.o"'
+### List of Objects: adding '".\output\usart.o"'
+### List of Objects: adding '".\output\looplist.o"'
+### List of Objects: adding '".\output\stmflash.o"'
+### List of Objects: adding '".\output\iap.o"'
+### List of Objects: adding '".\output\core_cm3.o"'
+### List of Objects: adding '".\output\system_stm32f10x.o"'
+### List of Objects: adding '".\output\misc.o"'
+### List of Objects: adding '".\output\stm32f10x_rcc.o"'
+### List of Objects: adding '".\output\stm32f10x_gpio.o"'
+### List of Objects: adding '".\output\stm32f10x_tim.o"'
+### List of Objects: adding '".\output\stm32f10x_usart.o"'
+### List of Objects: adding '".\output\stm32f10x_adc.o"'
+### List of Objects: adding '".\output\stm32f10x_dma.o"'
+### List of Objects: adding '".\output\stm32f10x_flash.o"'
+### List of Objects: adding '".\output\startup_stm32f10x_hd.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\output\stm32f10x_it.o" ".\output\main.o" ".\output\system.o" ".\output\gpio.o" ".\output\delay.o" ".\output\usart.o" ".\output\looplist.o" ".\output\stmflash.o" ".\output\iap.o" ".\output\core_cm3.o" ".\output\system_stm32f10x.o" ".\output\misc.o" ".\output\stm32f10x_rcc.o" ".\output\stm32f10x_gpio.o" ".\output\stm32f10x_tim.o" ".\output\stm32f10x_usart.o" ".\output\stm32f10x_adc.o" ".\output\stm32f10x_dma.o" ".\output\stm32f10x_flash.o" ".\output\startup_stm32f10x_hd.o" 
+--library_type=microlib --strict --scatter ".\output\Progect.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Listing\Progect.map" -o .\output\Progect.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\output\Progect.axf'
+### ADS-LD Command File: '.\output\Progect.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\output\Progect.lnp', Handle=0x000010C4
+### Writing '.lnp' file
+### ADS-LD Command file '.\output\Progect.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
